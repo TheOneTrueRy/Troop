@@ -1,0 +1,59 @@
+
+{
+  "folders": [
+    {
+      "path": "Troop.client",
+      "name": "client"
+    },
+    {
+      "path": "Troop",
+      "name": "server"
+    },{"path":".github/workflows", "name":"workflows"}
+  ],
+  "settings": {
+    "editor.suggestSelection": "first",
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "javascript.referencesCodeLens.enabled": true,
+    "javascript.referencesCodeLens.showOnAllFunctions": true,
+    "typescript.implementationsCodeLens.enabled": true,
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.referencesCodeLens.showOnAllFunctions": true,
+    "js/ts.implicitProjectConfig.checkJs": true,
+    "files.exclude": {
+      "**/.nyc_*": true,
+      "**/coverage": true,
+      "**/node_modules": true
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmDragAndDrop": false,
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true,
+    "eslint.lintTask.enable": true,
+    "eslint.codeActionsOnSave.mode": "all",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#b7fa54",
+      "activityBar.background": "#b7fa54",
+      "activityBar.foreground": "#15202b",
+      "activityBar.inactiveForeground": "#15202b99",
+      "activityBarBadge.background": "#26a4f9",
+      "activityBarBadge.foreground": "#15202b",
+      "commandCenter.border": "#15202b99",
+      "sash.hoverBorder": "#b7fa54",
+      "statusBar.background": "#a2f922",
+      "statusBar.foreground": "#15202b",
+      "statusBarItem.hoverBackground": "#89e206",
+      "statusBarItem.remoteBackground": "#a2f922",
+      "statusBarItem.remoteForeground": "#15202b",
+      "titleBar.activeBackground": "#a2f922",
+      "titleBar.activeForeground": "#15202b",
+      "titleBar.inactiveBackground": "#a2f92299",
+      "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#a2f922"
+  }
+}
