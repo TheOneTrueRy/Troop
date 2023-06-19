@@ -1,3 +1,4 @@
+-- Active: 1685397470514@@SG-boom-cinema-6923-7571-mysql-master.servers.mongodirector.com@3306@Troop
 CREATE TABLE IF NOT EXISTS accounts(
   id VARCHAR(255) NOT NULL primary key COMMENT 'primary key',
   createdAt DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT 'Time Created',
