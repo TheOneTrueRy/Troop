@@ -9,6 +9,10 @@ namespace Troop.Services
       _repo = repo;
     }
 
-
+    internal TroopEvent CreateEvent(TroopEvent eventData)
+    {
+      TroopEvent troopEvent = _repo.CreateEvent(eventData);
+      return troopEvent;
+    }
   }
 }
