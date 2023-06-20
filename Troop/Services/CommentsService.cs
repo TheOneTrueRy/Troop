@@ -1,12 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace Troop.Services
 {
-    public class CommentsService
+  public class CommentsService
+  {
+    private readonly CommentsRepository _repo;
+
+    public CommentsService(CommentsRepository repo)
     {
-        
+      _repo = repo;
     }
+
+
+  }
 }

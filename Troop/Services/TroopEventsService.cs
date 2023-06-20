@@ -1,12 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace Troop.Services
 {
-    public class TroopEventsService
+  public class TroopEventsService
+  {
+    private readonly TroopEventsRepository _repo;
+
+    public TroopEventsService(TroopEventsRepository repo)
     {
-        
+      _repo = repo;
     }
+
+
+  }
 }

@@ -1,12 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace Troop.Repositories
 {
-    public class TroopEventsRepository
+  public class TroopEventsRepository
+  {
+    private readonly IDbConnection _db;
+
+    public TroopEventsRepository(IDbConnection db)
     {
-        
+      _db = db;
     }
+
+
+  }
 }

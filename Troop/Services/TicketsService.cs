@@ -1,12 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace Troop.Services
 {
-    public class TicketsService
+  public class TicketsService
+  {
+    private readonly TicketsRepository _repo;
+
+    public TicketsService(TicketsRepository repo)
     {
-        
+      _repo = repo;
     }
+
+
+  }
 }
