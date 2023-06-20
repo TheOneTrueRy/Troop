@@ -1,15 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-
 namespace Troop.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class TicketsController : ControllerBase
+  [ApiController]
+  [Route("api/[controller]")]
+  public class TicketsController : ControllerBase
+  {
+    private readonly TicketsService ticketsService;
+    private readonly Auth0Provider _auth;
+
+    public TicketsController(TicketsService ticketsService, Auth0Provider auth)
     {
-        
+      this.ticketsService = ticketsService;
+      _auth = auth;
     }
+
+
+  }
 }
