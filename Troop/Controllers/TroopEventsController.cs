@@ -30,5 +30,19 @@ namespace Troop.Controllers
         return BadRequest(e.Message);
       }
     }
+
+    [HttpGet]
+    public ActionResult<List<TroopEvent>> GetAllEvents()
+    {
+      try
+      {
+        List<TroopEvent> troopEvents = troopEventsService.GetAllEvents();
+        return Ok(troopEvents);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
   }
 }

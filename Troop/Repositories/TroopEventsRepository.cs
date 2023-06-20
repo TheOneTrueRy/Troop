@@ -22,5 +22,14 @@ namespace Troop.Repositories
       eventData.Id = id;
       return eventData;
     }
+
+    internal List<TroopEvent> GetAllEvents()
+    {
+      string sql = @"
+      SELECT * FROM events;
+      ";
+      List<TroopEvent> troopEvents = _db.Query<TroopEvent>(sql).ToList();
+      return troopEvents;
+    }
   }
 }
