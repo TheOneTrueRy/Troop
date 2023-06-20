@@ -33,6 +33,12 @@ public class Startup
 
     services.AddScoped<AccountsRepository>();
     services.AddScoped<AccountService>();
+    services.AddScoped<TroopEventsRepository>();
+    services.AddScoped<TroopEventsService>();
+    services.AddScoped<TicketsRepository>();
+    services.AddScoped<TicketsService>();
+    services.AddScoped<CommentsRepository>();
+    services.AddScoped<CommentsService>();
   }
 
   private void ConfigureCors(IServiceCollection services)
