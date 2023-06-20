@@ -44,5 +44,19 @@ namespace Troop.Controllers
         return BadRequest(e.Message);
       }
     }
+
+    [HttpGet("{eventId}")]
+    public ActionResult<TroopEvent> GetEventById(int eventId)
+    {
+      try
+      {
+        TroopEvent troopEvent = troopEventsService.GetEventById(eventId);
+        return Ok(troopEvent);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
   }
 }

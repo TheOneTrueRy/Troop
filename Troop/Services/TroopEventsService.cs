@@ -20,5 +20,11 @@ namespace Troop.Services
       List<TroopEvent> troopEvents = _repo.GetAllEvents();
       return troopEvents;
     }
+
+    internal TroopEvent GetEventById(int eventId)
+    {
+      TroopEvent troopEvent = _repo.GetEventById(eventId);
+      return troopEvent;
+    }
   }
 }

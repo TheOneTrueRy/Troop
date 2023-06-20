@@ -31,5 +31,23 @@ namespace Troop.Repositories
       List<TroopEvent> troopEvents = _db.Query<TroopEvent>(sql).ToList();
       return troopEvents;
     }
+
+    internal TroopEvent GetEventById(int eventId)
+    {
+      string sql = @"
+      SELECT 
+      event.*,
+      acct.*
+      FROM events event
+      JOIN accounts acct on event.creatorId = acct.id
+      WHERE event.id = @eventId;
+      ";
+      TroopEvent troopEvent = _db.Query<TroopEvent, Profile, TroopEvent>(sql, (troopEvent, profile) =>
+      {
+        troopEvent.Creator = profile;
+        return troopEvent;
+      }, new { eventId }).FirstOrDefault();
+      return troopEvent;
+    }
   }
 }
