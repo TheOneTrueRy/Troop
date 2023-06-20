@@ -1,7 +1,7 @@
 namespace Troop.Controllers
 {
   [ApiController]
-  [Route("api/[controller]")]
+  [Route("api/events")]
   public class TroopEventsController : ControllerBase
   {
     private readonly TroopEventsService troopEventsService;

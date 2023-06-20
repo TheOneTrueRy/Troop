@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS events(
   coverImg VARCHAR(500) NOT NULL,
   location VARCHAR(50) NOT NULL,
   capacity INT NOT NULL,
-  startDate DATE NOT NULL,
+  startDate VARCHAR(100) NOT NULL,
   isCanceled BOOLEAN DEFAULT false,
   type VARCHAR(40) NOT NULL,
 
@@ -44,3 +44,5 @@ CREATE TABLE IF NOT EXISTS comments(
   FOREIGN KEY (creatorId) REFERENCES accounts(id) ON DELETE CASCADE,
   FOREIGN KEY (eventId) REFERENCES events(id) ON DELETE CASCADE
 ) default charset utf8mb4 COMMENT '';
+
+ALTER TABLE events MODIFY COLUMN startDate VARCHAR(100) NOT NULL;
