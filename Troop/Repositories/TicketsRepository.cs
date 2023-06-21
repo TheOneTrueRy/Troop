@@ -66,5 +66,23 @@ namespace Troop.Repositories
       int rows = _db.Execute(sql, new { ticketId });
       return rows == 1;
     }
+
+    internal List<Ticket> GetEventTickets(int eventId)
+    {
+      string sql = @"
+      SELECT
+      ticket.*,
+      acct.*
+      FROM tickets ticket
+      JOIN accounts acct ON ticket.accountId = acct.id
+      WHERE ticket.eventId = @eventId;
+      ";
+      List<Ticket> tickets = _db.Query<Ticket, Profile, Ticket>(sql, (ticket, profile) =>
+      {
+        ticket.Profile = profile;
+        return ticket;
+      }, new { eventId }).ToList();
+      return tickets;
+    }
   }
 }

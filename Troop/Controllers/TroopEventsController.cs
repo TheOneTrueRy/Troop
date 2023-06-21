@@ -5,12 +5,14 @@ namespace Troop.Controllers
   public class TroopEventsController : ControllerBase
   {
     private readonly TroopEventsService troopEventsService;
+    private readonly TicketsService ticketsService;
     private readonly Auth0Provider _auth;
 
-    public TroopEventsController(TroopEventsService troopEventsService, Auth0Provider auth)
+    public TroopEventsController(TroopEventsService troopEventsService, Auth0Provider auth, TicketsService ticketsService)
     {
       this.troopEventsService = troopEventsService;
       _auth = auth;
+      this.ticketsService = ticketsService;
     }
 
     [HttpPost]
@@ -86,6 +88,20 @@ namespace Troop.Controllers
         Account userInfo = await _auth.GetUserInfoAsync<Account>(HttpContext);
         TroopEvent canceledEvent = troopEventsService.CancelEvent(eventId, userInfo.Id);
         return Ok(canceledEvent);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
+
+    [HttpGet("{eventId}/tickets")]
+    public ActionResult<List<Ticket>> GetEventTickets(int eventId)
+    {
+      try
+      {
+        List<Ticket> tickets = ticketsService.GetEventTickets(eventId);
+        return Ok(tickets);
       }
       catch (Exception e)
       {

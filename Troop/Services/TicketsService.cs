@@ -41,5 +41,11 @@ namespace Troop.Services
       }
       return $"Successfully deleted the ticket at the Id of {ticketId}";
     }
+
+    internal List<Ticket> GetEventTickets(int eventId)
+    {
+      List<Ticket> tickets = _repo.GetEventTickets(eventId);
+      return tickets;
+    }
   }
 }
