@@ -32,11 +32,13 @@ namespace Troop.Controllers
 
     [HttpDelete("{ticketId}")]
     [Authorize]
-    public async Task<ActionResult<Ticket>> DeleteTicket(int ticketId)
+    public async Task<ActionResult<string>> DeleteTicket(int ticketId)
     {
       try
       {
         Account userInfo = await _auth.GetUserInfoAsync<Account>(HttpContext);
+        string message = ticketsService.DeleteTicket(ticketId, userInfo.Id);
+        return Ok(message);
       }
       catch (Exception e)
       {

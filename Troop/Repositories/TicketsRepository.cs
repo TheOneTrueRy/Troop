@@ -35,7 +35,7 @@ namespace Troop.Repositories
       event.*
       FROM tickets ticket
       JOIN events event on ticket.eventId = event.id
-      WHERE tickets.accountId = @userId;
+      WHERE ticket.accountId = @userId;
       ";
       List<Ticket> tickets = _db.Query<Ticket, TroopEvent, Ticket>(sql, (ticket, troopEvent) =>
       {
@@ -43,6 +43,28 @@ namespace Troop.Repositories
         return ticket;
       }, new { userId }).ToList();
       return tickets;
+    }
+
+    internal Ticket GetOneTicket(int ticketId)
+    {
+      string sql = @"
+      SELECT
+      *
+      FROM  tickets
+      WHERE id = @ticketId;
+      ";
+      Ticket ticket = _db.Query<Ticket>(sql, new { ticketId }).FirstOrDefault();
+      return ticket;
+    }
+
+    internal bool DeleteTicket(int ticketId)
+    {
+      string sql = @"
+      DELETE FROM tickets
+      WHERE id = @ticketId;
+      ";
+      int rows = _db.Execute(sql, new { ticketId });
+      return rows == 1;
     }
   }
 }

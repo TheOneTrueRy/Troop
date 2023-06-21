@@ -30,7 +30,7 @@ public class AccountController : ControllerBase
     }
   }
 
-  [HttpGet("/tickets")]
+  [HttpGet("tickets")]
   [Authorize]
   public async Task<ActionResult<List<Ticket>>> GetMyTickets()
   {
