@@ -49,5 +49,21 @@ namespace Troop.Repositories
       }, new { eventId }).FirstOrDefault();
       return troopEvent;
     }
+
+    internal int EditEvent(TroopEvent eventData)
+    {
+      string sql = @"
+      UPDATE events
+      SET
+      name = @name,
+      description = @description,
+      location = @location,
+      startDate = @startDate,
+      isCanceled = @isCanceled
+      WHERE id = @id;
+      ";
+      int rows = _db.Execute(sql, eventData);
+      return rows;
+    }
   }
 }

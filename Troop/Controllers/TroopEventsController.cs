@@ -58,5 +58,23 @@ namespace Troop.Controllers
         return BadRequest(e.Message);
       }
     }
+
+    [HttpPut("{eventId}")]
+    [Authorize]
+    public async Task<ActionResult<TroopEvent>> EditEvent(int eventId, [FromBody] TroopEvent eventData)
+    {
+      try
+      {
+        Account userInfo = await _auth.GetUserInfoAsync<Account>(HttpContext);
+        eventData.CreatorId = userInfo.Id;
+        eventData.Id = eventId;
+        TroopEvent editedEvent = troopEventsService.EditEvent(eventData);
+        return Ok(editedEvent);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
   }
 }
