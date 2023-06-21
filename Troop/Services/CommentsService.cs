@@ -9,6 +9,10 @@ namespace Troop.Services
       _repo = repo;
     }
 
-
+    internal Comment CreateComment(Comment commentData)
+    {
+      Comment comment = _repo.CreateComment(commentData);
+      return comment;
+    }
   }
 }

@@ -13,6 +13,22 @@ namespace Troop.Controllers
       _auth = auth;
     }
 
-
+    [HttpPost]
+    [Authorize]
+    public async Task<ActionResult<Comment>> CreateComment([FromBody] Comment commentData)
+    {
+      try
+      {
+        Account userInfo = await _auth.GetUserInfoAsync<Account>(HttpContext);
+        commentData.CreatorId = userInfo.Id;
+        Comment comment = commentsService.CreateComment(commentData);
+        commentData.Creator = userInfo;
+        return Ok(comment);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
   }
 }
