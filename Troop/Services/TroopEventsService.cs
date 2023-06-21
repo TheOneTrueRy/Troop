@@ -34,11 +34,27 @@ namespace Troop.Services
       {
         throw new Exception("You can not edit an event you did not create.");
       }
+      if (original.IsCanceled == true)
+      {
+        throw new Exception("You can not edit a cancelled event.");
+      }
       original.Name = eventData.Name != null ? eventData.Name : original.Name;
       original.Description = eventData.Description != null ? eventData.Description : original.Description;
       original.Location = eventData.Location != null ? eventData.Location : original.Location;
       original.StartDate = eventData.StartDate != null ? eventData.StartDate : original.StartDate;
       original.IsCanceled = eventData.IsCanceled == true ? eventData.IsCanceled : original.IsCanceled;
+      _repo.EditEvent(original);
+      return original;
+    }
+
+    internal TroopEvent CancelEvent(int eventId, string userId)
+    {
+      TroopEvent original = this.GetEventById(eventId);
+      if (original.CreatorId != userId)
+      {
+        throw new Exception("You can not cancel an event you did not create.");
+      }
+      original.IsCanceled = true;
       _repo.EditEvent(original);
       return original;
     }

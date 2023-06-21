@@ -76,5 +76,21 @@ namespace Troop.Controllers
         return BadRequest(e.Message);
       }
     }
+
+    [HttpDelete("{eventId}")]
+    [Authorize]
+    public async Task<ActionResult<TroopEvent>> CancelEvent(int eventId)
+    {
+      try
+      {
+        Account userInfo = await _auth.GetUserInfoAsync<Account>(HttpContext);
+        TroopEvent canceledEvent = troopEventsService.CancelEvent(eventId, userInfo.Id);
+        return Ok(canceledEvent);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
   }
 }
