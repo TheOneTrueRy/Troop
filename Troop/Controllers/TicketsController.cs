@@ -29,5 +29,19 @@ namespace Troop.Controllers
         return BadRequest(e.Message);
       }
     }
+
+    [HttpDelete("{ticketId}")]
+    [Authorize]
+    public async Task<ActionResult<Ticket>> DeleteTicket(int ticketId)
+    {
+      try
+      {
+        Account userInfo = await _auth.GetUserInfoAsync<Account>(HttpContext);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
   }
 }

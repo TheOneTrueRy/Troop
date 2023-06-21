@@ -14,5 +14,11 @@ namespace Troop.Services
       Ticket ticket = _repo.CreateTicket(ticketData);
       return ticket;
     }
+
+    internal List<Ticket> GetMyTickets(string userId)
+    {
+      List<Ticket> tickets = _repo.GetMyTickets(userId);
+      return tickets;
+    }
   }
 }

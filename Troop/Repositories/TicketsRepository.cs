@@ -26,5 +26,23 @@ namespace Troop.Repositories
       ticketData.Id = id;
       return ticketData;
     }
+
+    internal List<Ticket> GetMyTickets(string userId)
+    {
+      string sql = @"
+      SELECT
+      ticket.*,
+      event.*
+      FROM tickets ticket
+      JOIN events event on ticket.eventId = event.id
+      WHERE tickets.accountId = @userId;
+      ";
+      List<Ticket> tickets = _db.Query<Ticket, TroopEvent, Ticket>(sql, (ticket, troopEvent) =>
+      {
+        ticket.Event = troopEvent;
+        return ticket;
+      }, new { userId }).ToList();
+      return tickets;
+    }
   }
 }
