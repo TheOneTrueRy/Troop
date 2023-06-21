@@ -9,6 +9,10 @@ namespace Troop.Services
       _repo = repo;
     }
 
-
+    internal Ticket CreateTicket(Ticket ticketData)
+    {
+      Ticket ticket = _repo.CreateTicket(ticketData);
+      return ticket;
+    }
   }
 }

@@ -13,6 +13,21 @@ namespace Troop.Controllers
       _auth = auth;
     }
 
-
+    [HttpPost]
+    [Authorize]
+    public async Task<ActionResult<Ticket>> CreateTicket([FromBody] Ticket ticketData)
+    {
+      try
+      {
+        Account userInfo = await _auth.GetUserInfoAsync<Account>(HttpContext);
+        ticketData.AccountId = userInfo.Id;
+        Ticket ticket = ticketsService.CreateTicket(ticketData);
+        return Ok(ticket);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
   }
 }
