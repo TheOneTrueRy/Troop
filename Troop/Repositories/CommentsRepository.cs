@@ -40,5 +40,27 @@ namespace Troop.Repositories
       }, new { eventId }).ToList();
       return comments;
     }
+
+    internal Comment GetOneComment(int commentId)
+    {
+      string sql = @"
+      SELECT
+      *
+      FROM comments
+      WHERE id = @commentId;
+      ";
+      Comment comment = _db.Query<Comment>(sql, new { commentId }).FirstOrDefault();
+      return comment;
+    }
+
+    internal bool DeleteComment(int commentId)
+    {
+      string sql = @"
+      DELETE FROM comments
+      WHERE id = @commentId;
+      ";
+      int rows = _db.Execute(sql, new { commentId });
+      return rows == 1;
+    }
   }
 }

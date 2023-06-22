@@ -3,14 +3,21 @@ namespace Troop.Services
   public class TicketsService
   {
     private readonly TicketsRepository _repo;
+    private readonly TroopEventsService troopEventsService;
 
-    public TicketsService(TicketsRepository repo)
+    public TicketsService(TicketsRepository repo, TroopEventsService troopEventsService)
     {
       _repo = repo;
+      this.troopEventsService = troopEventsService;
     }
 
     internal Ticket CreateTicket(Ticket ticketData)
     {
+      TroopEvent troopEvent = troopEventsService.GetEventById(ticketData.EventId);
+      if (troopEvent.Capacity == 0)
+      {
+        throw new Exception("You can not create a ticket for an event that is at full capacity.");
+      }
       Ticket ticket = _repo.CreateTicket(ticketData);
       return ticket;
     }
