@@ -14,5 +14,11 @@ namespace Troop.Services
       Comment comment = _repo.CreateComment(commentData);
       return comment;
     }
+
+    internal List<Comment> GetEventComments(int eventId)
+    {
+      List<Comment> comments = _repo.GetEventComments(eventId);
+      return comments;
+    }
   }
 }

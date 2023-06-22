@@ -6,13 +6,15 @@ namespace Troop.Controllers
   {
     private readonly TroopEventsService troopEventsService;
     private readonly TicketsService ticketsService;
+    private readonly CommentsService commentsService;
     private readonly Auth0Provider _auth;
 
-    public TroopEventsController(TroopEventsService troopEventsService, Auth0Provider auth, TicketsService ticketsService)
+    public TroopEventsController(TroopEventsService troopEventsService, Auth0Provider auth, TicketsService ticketsService, CommentsService commentsService)
     {
       this.troopEventsService = troopEventsService;
       _auth = auth;
       this.ticketsService = ticketsService;
+      this.commentsService = commentsService;
     }
 
     [HttpPost]
@@ -102,6 +104,20 @@ namespace Troop.Controllers
       {
         List<Ticket> tickets = ticketsService.GetEventTickets(eventId);
         return Ok(tickets);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
+
+    [HttpGet("{eventId}/comments")]
+    public ActionResult<List<Comment>> GetEventComments(int eventId)
+    {
+      try
+      {
+        List<Comment> comments = commentsService.GetEventComments(eventId);
+        return Ok(comments);
       }
       catch (Exception e)
       {

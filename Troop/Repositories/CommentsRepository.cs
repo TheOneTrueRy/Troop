@@ -22,5 +22,23 @@ namespace Troop.Repositories
       commentData.Id = id;
       return commentData;
     }
+
+    internal List<Comment> GetEventComments(int eventId)
+    {
+      string sql = @"
+      SELECT
+      comment.*,
+      acct.*
+      FROM comments comment
+      JOIN accounts acct ON comment.creatorId = acct.id
+      WHERE comment.eventId = @eventId;
+      ";
+      List<Comment> comments = _db.Query<Comment, Profile, Comment>(sql, (comment, profile) =>
+      {
+        comment.Creator = profile;
+        return comment;
+      }, new { eventId }).ToList();
+      return comments;
+    }
   }
 }
