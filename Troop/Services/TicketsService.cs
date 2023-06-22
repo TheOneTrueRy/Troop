@@ -41,7 +41,7 @@ namespace Troop.Services
       {
         throw new Exception("You can't delete somebody elses ticket!");
       }
-      bool result = _repo.DeleteTicket(ticketId);
+      bool result = _repo.DeleteTicket(ticketId, ticket.EventId);
       if (!result)
       {
         throw new Exception($"Something went wrong trying to delete the ticket at the Id of {ticketId}");

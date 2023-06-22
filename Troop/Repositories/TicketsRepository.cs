@@ -57,13 +57,17 @@ namespace Troop.Repositories
       return ticket;
     }
 
-    internal bool DeleteTicket(int ticketId)
+    internal bool DeleteTicket(int ticketId, int eventId)
     {
       string sql = @"
       DELETE FROM tickets
       WHERE id = @ticketId;
+      UPDATE events
+      SET
+      capacity = capacity + 1
+      WHERE id = @eventId;
       ";
-      int rows = _db.Execute(sql, new { ticketId });
+      int rows = _db.Execute(sql, new { ticketId, eventId });
       return rows == 1;
     }
 
