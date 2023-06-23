@@ -15,10 +15,6 @@ export function App() {
         <Outlet />
       </main>
 
-      <footer className="bg-dark text-light text-center p-3 ">
-        Made with 💖 by CodeWorks
-      </footer>
-
     </div>
   )
 }

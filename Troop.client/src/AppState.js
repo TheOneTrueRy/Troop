@@ -7,6 +7,16 @@ class ObservableAppState {
   user = null
   /** @type {import('./models/Account.js').Account} */
   account = null
+  /** @type {import('./models/Event.js').Event[]} */
+  events = []
+  /** @type {import('./models/Event.js').Event} */
+  event = null
+  /** @type {import('./models/Ticket.js').Ticket[]} */
+  eventTickets = []
+  /** @type {import('./models/Ticket.js').Ticket[]} */
+  myTickets = []
+  /** @type {import('./models/Comment.js').Comment[]} */
+  comments = []
 
   constructor() {
     makeAutoObservable(this)
