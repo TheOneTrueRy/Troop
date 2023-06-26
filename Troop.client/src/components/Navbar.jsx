@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from '../assets/img/cw-logo.png';
 import Login from "./Login.jsx";
 
 export function Navbar() {
@@ -8,7 +7,7 @@ export function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
       <Link className="navbar-brand d-flex" to={''}>
         <div className="d-flex flex-column align-items-center">
-          <img alt="logo" src={logo} height="45" />
+          <img alt="logo" src='' height="45" />
         </div>
       </Link>
       <button
