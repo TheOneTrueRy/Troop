@@ -14,7 +14,7 @@ export function App() {
               <Outlet />
             </main>
           </div>
-          <div className="col-12 col-md-1 order-1 order-md-2 g-0">
+          <div className="col-12 col-md-1 order-1 order-md-2 g-0 vh-md-100 sticky-top bg-dark">
             <Navbar />
           </div>
         </div>
