@@ -1,8 +1,12 @@
 import { observer } from "mobx-react";
-import React from "react";
+import React, { useEffect } from "react";
 import { AppState } from "../AppState.js";
 
 function AccountPage() {
+
+  useEffect(() => {
+    document.title = 'Troop - Account 👤'
+  }, [])
 
   return (
     <div className="account-page">
