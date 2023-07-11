@@ -24,7 +24,7 @@ export function Navbar() {
       <div className="collapse navbar-collapse flex-column" id="navbarText">
         <ul className="navbar-nav">
           <li className="">
-            <Link to={'About'} className="selectable text-uppercase">
+            <Link to={'About'} className="bttn bttn3 text-uppercase d-flex justify-content-center align-items-center text-light">
               About
             </Link>
           </li>
