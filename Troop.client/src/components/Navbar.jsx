@@ -21,14 +21,7 @@ export function Navbar() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse flex-column pt-3" id="navbarText">
-        <ul className="navbar-nav w-100">
-          <li className="w-100 d-flex justify-content-center">
-            <Link to={'About'} className="bttn bttn3 text-uppercase d-flex justify-content-center align-items-center text-light">
-              About
-            </Link>
-          </li>
-        </ul>
+      <div className="collapse navbar-collapse flex-column" id="navbarText">
         <Login />
       </div >
     </nav >
