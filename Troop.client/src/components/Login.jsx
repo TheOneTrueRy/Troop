@@ -41,8 +41,8 @@ function Login() {
   )
 
   return (
-    <div>
-      <span className="navbar-text">
+    <div className="w-100">
+      <span className="navbar-text w-100 d-flex justify-content-center">
         {!AppState.account?.id ? notAuthenticated : authenticated}
       </span>
     </div>

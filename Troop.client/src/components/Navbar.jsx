@@ -4,7 +4,7 @@ import Login from "./Login.jsx";
 
 export function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark px-3">
+    <nav className="navbar navbar-expand-lg navbar-dark px-2 px-lg-0">
       <Link className="navbar-brand d-lg-none d-flex" to={''}>
         <div className="d-flex flex-column align-items-center">
           <img alt="logo" src='' className="logo" />
@@ -21,9 +21,9 @@ export function Navbar() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse flex-column" id="navbarText">
-        <ul className="navbar-nav">
-          <li className="">
+      <div className="collapse navbar-collapse flex-column pt-3" id="navbarText">
+        <ul className="navbar-nav w-100">
+          <li className="w-100 d-flex justify-content-center">
             <Link to={'About'} className="bttn bttn3 text-uppercase d-flex justify-content-center align-items-center text-light">
               About
             </Link>

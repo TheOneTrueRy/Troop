@@ -57,7 +57,7 @@ form:invalid button[type="submit"] {
   font-family: "montserrat";
   text-decoration: none;
   border: 2px solid #7541af;
-  width: 6vw;
+  width: 40%;
   height: 5vh;
   border-radius: 2px;
   background: transparent;
@@ -85,6 +85,12 @@ form:invalid button[type="submit"] {
 
 .bttn3:hover::before{
   height: 380%;
+}
+
+@media screen and (min-width: 992px) {
+  .bttn{
+    width: 90%;
+  }
 }
 
 // END OF FANCY BUTTON MAGIC
