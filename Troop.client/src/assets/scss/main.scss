@@ -58,7 +58,7 @@ form:invalid button[type="submit"] {
   text-decoration: none;
   border: 2px solid #7541af;
   width: 40%;
-  height: 5vh;
+  height: 50px;
   border-radius: 2px;
   background: transparent;
   text-transform: uppercase;
@@ -77,6 +77,10 @@ form:invalid button[type="submit"] {
   transition: all 0.6s ease;
 }
 
+.bttn:active{
+  transform: scale(0.9);
+}
+
 .bttn3::before{
   width: 110%;
   height: 0%;
@@ -92,8 +96,8 @@ form:invalid button[type="submit"] {
 .account-picture{
   object-fit: cover;
   object-position: center;
-  height: 25vw;
-  width: 25vw;
+  height: 30vw;
+  width: 30vw;
   border: 3px solid #7541af;
 }
 

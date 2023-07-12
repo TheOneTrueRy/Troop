@@ -24,16 +24,16 @@ function Login() {
 
   const authenticated = (
     <div className="mt-2 my-lg-0 w-100 d-flex align-items-center flex-column">
-      <Link to={"Account"} title="Visit your Account page.">
+      <Link to={"Account"} title="Visit your Account page." data-bs-toggle="collapse" data-bs-target="#navbarText">
         <img src={AppState.account?.picture} alt="Account Picture" className="account-picture selectable" />
       </Link>
-      <Link to={""} className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light">
+      <Link to={""} className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light" data-bs-toggle="collapse" data-bs-target="#navbarText">
         Home
       </Link>
-      <Link to={"Account"} className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light">
+      <Link to={"Account"} className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light" data-bs-toggle="collapse" data-bs-target="#navbarText">
         Account
       </Link>
-      <button className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light">
+      <button className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light" data-bs-toggle="collapse" data-bs-target="#navbarText">
         New Event
       </button>
       <button onClick={logout} className="bttn bttn3 text-uppercase mt-3 mb-2 d-flex align-items-center justify-content-center text-light">
