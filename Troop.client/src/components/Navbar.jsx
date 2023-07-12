@@ -6,9 +6,10 @@ export function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark px-2 px-lg-0">
       <Link className="navbar-brand d-lg-none d-flex" to={''}>
-        <div className="d-flex flex-column align-items-center">
+        {/* <div className="d-flex flex-column align-items-center">
           <img alt="logo" src='' className="logo" />
-        </div>
+        </div> */}
+        <h1 className="mb-0">Troop 🐵</h1>
       </Link>
       <button
         className="navbar-toggler"

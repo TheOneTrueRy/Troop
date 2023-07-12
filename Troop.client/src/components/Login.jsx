@@ -17,8 +17,8 @@ function Login() {
 
   const notAuthenticated = (
     <div className="w-100 d-flex align-items-center flex-column">
-      <button className="bttn bttn3 text-uppercase mt-lg-3 mt-1" onClick={login}>Login</button>
-      <Link to={""} className="bttn bttn3 text-uppercase mt-3 mb-1 d-flex align-items-center justify-content-center text-light">Home</Link>
+      <button className="bttn bttn3 text-uppercase mt-3" onClick={login}>Login</button>
+      <Link to={""} className="bttn bttn3 text-uppercase mt-3 mb-2 d-flex align-items-center justify-content-center text-light">Home</Link>
     </div>
   )
 
