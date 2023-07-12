@@ -16,20 +16,34 @@ function Login() {
   }
 
   const notAuthenticated = (
-    <>
-      <button className="bttn bttn3 text-uppercase mt-1 mb-2" onClick={login}>Login</button>
-      <Link to={""} className="bttn bttn3 text-uppercase mt-1 mb-2 d-flex align-items-center justify-content-center text-light">Home</Link>
-    </>
+    <div className="w-100 d-flex align-items-center flex-column">
+      <button className="bttn bttn3 text-uppercase mt-lg-3 mt-1" onClick={login}>Login</button>
+      <Link to={""} className="bttn bttn3 text-uppercase mt-3 mb-1 d-flex align-items-center justify-content-center text-light">Home</Link>
+    </div>
   )
 
   const authenticated = (
-    <div className="my-2 my-lg-0">
-      <img src={AppState.account?.picture} alt="Account Picture" className="account-picture" />
+    <div className="mt-2 my-lg-0 w-100 d-flex align-items-center flex-column">
+      <Link to={"Account"} title="Visit your Account page.">
+        <img src={AppState.account?.picture} alt="Account Picture" className="account-picture selectable" />
+      </Link>
+      <Link to={""} className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light">
+        Home
+      </Link>
+      <Link to={"Account"} className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light">
+        Account
+      </Link>
+      <button className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light">
+        New Event
+      </button>
+      <button onClick={logout} className="bttn bttn3 text-uppercase mt-3 mb-2 d-flex align-items-center justify-content-center text-light">
+        Logout
+      </button>
     </div>
   )
 
   return (
-    <div className="w-100 d-flex flex-column align-items-center">
+    <div className="w-100">
       {!AppState.account?.id ? notAuthenticated : authenticated}
     </div>
   )

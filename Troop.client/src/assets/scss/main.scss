@@ -87,10 +87,23 @@ form:invalid button[type="submit"] {
   height: 380%;
 }
 
+// END OF FANCY BUTTON MAGIC
+
+.account-picture{
+  object-fit: cover;
+  object-position: center;
+  height: 25vw;
+  width: 25vw;
+  border: 3px solid #7541af;
+}
+
 @media screen and (min-width: 992px) {
   .bttn{
     width: 90%;
   }
-}
 
-// END OF FANCY BUTTON MAGIC
+  .account-picture{
+    height: 7.5vw;
+    width: 7.5vw;
+  }
+}
