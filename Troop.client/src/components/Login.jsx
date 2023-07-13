@@ -27,13 +27,13 @@ function Login() {
       <Link to={"Account"} title="Visit your Account page." data-bs-toggle="collapse" data-bs-target="#navbarText">
         <img src={AppState.account?.picture} alt="Account Picture" className="account-picture selectable" />
       </Link>
-      <Link to={""} className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light" data-bs-toggle="collapse" data-bs-target="#navbarText">
+      <Link to={""} className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light" data-bs-toggle="collapse" data-bs-target="#navbarText" title="Visit the Home page.">
         Home
       </Link>
-      <Link to={"Account"} className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light" data-bs-toggle="collapse" data-bs-target="#navbarText">
+      <Link to={"Account"} className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light" data-bs-toggle="collapse" data-bs-target="#navbarText" title="Visit your Account page.">
         Account
       </Link>
-      <button className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light" data-bs-toggle="collapse" data-bs-target="#navbarText">
+      <button className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light px-0" data-bs-toggle="collapse" data-bs-target="#navbarText" title="Open the Event Creation form.">
         New Event
       </button>
       <button onClick={logout} className="bttn bttn3 text-uppercase mt-3 mb-2 d-flex align-items-center justify-content-center text-light">

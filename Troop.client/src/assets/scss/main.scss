@@ -42,8 +42,8 @@ form:invalid button[type="submit"] {
 }
 
 @media screen and (min-width: 992px) {
-  .vh-lg-100{
-    height: 100vh;
+  .vh-lg-70{
+    height: 70vh;
   }
 }
 
@@ -82,13 +82,13 @@ form:invalid button[type="submit"] {
 }
 
 .bttn3::before{
-  width: 110%;
+  width: 100%;
   height: 0%;
   transform: translate(-50%,-50%) rotate(45deg);
 }
 
 .bttn3:hover::before{
-  height: 380%;
+  height: 550%;
 }
 
 // END OF FANCY BUTTON MAGIC
@@ -103,11 +103,11 @@ form:invalid button[type="submit"] {
 
 @media screen and (min-width: 992px) {
   .bttn{
-    width: 90%;
+    width: 70%;
   }
 
   .account-picture{
-    height: 7.5vw;
-    width: 7.5vw;
+    height: 9vw;
+    width: 9vw;
   }
 }

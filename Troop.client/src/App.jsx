@@ -9,12 +9,19 @@ export function App() {
     <div className="App bg-dark" id="app">
       <div className="container-fluid">
         <div className="row">
-          <div className="col-12 col-lg-11 order-2 order-lg-1 g-0">
-            <main>
-              <Outlet />
-            </main>
+          <div className="col-12 col-lg-10 order-2 order-lg-1 g-0">
+            <div className="row">
+              <div className="col-12 bg-dark bg-gradient ps-4 pt-1 d-lg-flex d-none">
+                <h1>Troop 🐵</h1>
+              </div>
+              <div className="col-12">
+                <main>
+                  <Outlet />
+                </main>
+              </div>
+            </div>
           </div>
-          <div className="col-12 col-lg-1 order-1 order-lg-2 g-0 vh-lg-100 sticky-top bg-dark bg-gradient">
+          <div className="col-12 col-lg-2 order-1 order-lg-2 g-0 vh-lg-70 sticky-top bg-dark bg-gradient">
             <Navbar />
           </div>
         </div>
