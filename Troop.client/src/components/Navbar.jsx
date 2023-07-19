@@ -4,7 +4,7 @@ import Login from "./Login.jsx";
 
 export function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark px-2 px-lg-0">
+    <nav className="navbar navbar-expand-lg navbar-dark px-4 px-lg-0">
       <Link className="navbar-brand d-lg-none d-flex selectable" to={''}>
         <h1 className="mb-0">Troop 🐵</h1>
       </Link>

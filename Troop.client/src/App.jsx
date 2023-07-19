@@ -9,7 +9,7 @@ export function App() {
     <div className="App bg-dark" id="app">
       <div className="container-fluid">
         <div className="row">
-          <div className="col-12 col-lg-10 order-2 order-lg-1 g-0">
+          <div className="col-12 col-lg-10 order-2 order-lg-1">
             <div className="row">
               <div className="col-12 bg-dark bg-gradient ps-4 pt-1 d-lg-flex d-none">
                 <h1>Troop 🐵</h1>

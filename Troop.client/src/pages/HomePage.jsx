@@ -10,7 +10,7 @@ function HomePage() {
   return (
     <div className="home-page px-4">
       <div className="row rounded elevation-1 home-header-pic">
-        <div className="col-4 d-flex flex-column justify-content-center">
+        <div className="col-12 d-flex flex-column justify-content-center">
           <span className="fs-3 text-light py-1 text-shadow">
             Get ahead of the scalpers.
           </span>
