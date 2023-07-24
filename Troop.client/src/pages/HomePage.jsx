@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import FilterBar from "../components/FilterBar.jsx";
 import Pop from "../utils/Pop.js";
 import { eventsService } from "../services/EventsService.js";
+import { AppState } from "../AppState.js";
+import Event from "../components/Event.jsx";
 
 
 function HomePage() {
@@ -20,6 +22,8 @@ function HomePage() {
       Pop.error(error);
     }
   }
+
+  let events = AppState.filteredEvents
 
   return (
     <div className="container-fluid">
@@ -39,7 +43,11 @@ function HomePage() {
       <div className="row">
         <FilterBar />
         <div className="col-12 pt-3">
-
+          <div className="row">
+            {events.map((e) => (
+              <Event event={e} key={e.id} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -8,7 +8,16 @@ class EventsService {
     const res = await api.get('api/events')
     logger.log('All Events:', res.data)
     AppState.events = res.data.map(e => new Event(e))
+    AppState.filteredEvents = res.data.map(e => new Event(e))
     logger.log('Mapped AppState Events:', AppState.events)
+  }
+
+  changeFilter(category) {
+    if (category == 'all') {
+      AppState.filteredEvents = AppState.events
+    } else {
+      AppState.filteredEvents = AppState.events.filter(e => e.type == category)
+    }
   }
 }
 
