@@ -41,12 +41,6 @@ form:invalid button[type="submit"] {
   pointer-events: none;
 }
 
-@media screen and (min-width: 992px) {
-  .vh-lg-70{
-    height: 70vh;
-  }
-}
-
 // FANCY BUTTON MAGIC
 
 .bttn{
@@ -116,6 +110,26 @@ form:invalid button[type="submit"] {
   text-shadow: 2px 1px 2px black;
 }
 
+.all{
+  border-top-left-radius: 6px;
+}
+
+.sports{
+  border-top-right-radius: 6px;
+}
+
+.digital{
+  border-bottom-left-radius: 6px;
+}
+
+.other{
+  border-bottom-right-radius: 6px;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
 @media screen and (min-width: 992px) {
   .bttn{
     width: 70%;
@@ -124,5 +138,25 @@ form:invalid button[type="submit"] {
   .account-picture{
     height: 9vw;
     width: 9vw;
+  }
+
+  .vh-lg-70{
+    height: 70vh;
+  }
+
+  .all{
+    border-bottom-left-radius: 6px;
+  }
+
+  .sports{
+    border-top-right-radius: 0px;
+  }
+
+  .digital{
+    border-bottom-left-radius: 0px;
+  }
+
+  .other{
+    border-top-right-radius: 6px;
   }
 }
