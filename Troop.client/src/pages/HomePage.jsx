@@ -1,13 +1,25 @@
 import { observer } from "mobx-react-lite";
 import React, { useEffect, useState } from "react";
 import FilterBar from "../components/FilterBar.jsx";
+import Pop from "../utils/Pop.js";
+import { eventsService } from "../services/EventsService.js";
 
 
 function HomePage() {
 
   useEffect(() => {
-    document.title = 'Troop - Home 🏠'
+    document.title = 'Troop - Home 🏠';
+    getEvents();
   }, [])
+
+  async function getEvents() {
+    try {
+      await eventsService.getEvents();
+    }
+    catch (error) {
+      Pop.error(error);
+    }
+  }
 
   return (
     <div className="container-fluid">
@@ -26,6 +38,9 @@ function HomePage() {
       </div>
       <div className="row">
         <FilterBar />
+        <div className="col-12 pt-3">
+
+        </div>
       </div>
     </div>
   )
