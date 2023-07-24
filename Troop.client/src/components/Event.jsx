@@ -6,7 +6,7 @@ function Event({ event }) {
 
   return (
 
-    <div className="col-6 col-md-4 col-lg-3 p-3">
+    <div className="col-6 col-lg-4 col-xl-3 p-4">
       <span className="fs-3 capitalize-first">
         {event.type} event
       </span>
