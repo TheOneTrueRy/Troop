@@ -8,9 +8,9 @@ function HomePage() {
   }, [])
 
   return (
-    <div className="home-page px-4">
-      <div className="row rounded elevation-1 home-header-pic">
-        <div className="col-12 d-flex flex-column justify-content-center">
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-12 d-flex flex-column justify-content-center rounded elevation-1 home-header-pic">
           <span className="fs-3 text-light py-1 text-shadow">
             Get ahead of the scalpers.
           </span>
@@ -20,6 +20,11 @@ function HomePage() {
           <span className="fs-3 text-light py-1 text-shadow">
             Real events for real people.
           </span>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-12 g-0">
+          <span className="fs-1">Test</span>
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ export function App() {
               <div className="col-12 bg-dark bg-gradient ps-4 pt-1 d-lg-flex d-none">
                 <h1>Troop 🐵</h1>
               </div>
-              <div className="col-12">
+              <div className="col-12 px-4">
                 <main>
                   <Outlet />
                 </main>
