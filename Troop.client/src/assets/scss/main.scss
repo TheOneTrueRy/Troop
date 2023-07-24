@@ -130,6 +130,10 @@ form:invalid button[type="submit"] {
   cursor: pointer;
 }
 
+.border-purple{
+  border-color: #7541af !important;
+}
+
 @media screen and (min-width: 992px) {
   .bttn{
     width: 70%;
