@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import { Navbar } from './components/Navbar.jsx'
 
 
@@ -12,7 +12,9 @@ export function App() {
           <div className="col-12 col-lg-10 order-2 order-lg-1">
             <div className="row">
               <div className="col-12 bg-dark bg-gradient ps-4 pt-1 d-lg-flex d-none">
-                <h1>Troop 🐵</h1>
+                <Link to={''} title="Return to Homepage." className="pointer text-light">
+                  <h1>Troop 🐵</h1>
+                </Link>
               </div>
               <div className="col-12 px-4">
                 <main>

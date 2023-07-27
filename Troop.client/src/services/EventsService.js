@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { Event } from "../models/Event.js";
+import { Ticket } from "../models/Ticket.js";
 import { logger } from "../utils/Logger.js";
 import { api } from "./AxiosService.js";
 
@@ -24,6 +25,7 @@ class EventsService {
     const res = await api.get(`api/events/${eventId}`)
     AppState.event = new Event(res.data)
   }
+
 }
 
 export const eventsService = new EventsService();

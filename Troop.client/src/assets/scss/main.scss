@@ -178,8 +178,31 @@ form:invalid button[type="submit"] {
   height: 100%;
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.attend-event-btn{
+  background-color: #7541af;
+  color: rgb(0, 0, 0);
+  border: none;
+  transition: 0.5s;
+}
+
+.attend-event-btn:hover{
+  transform: scale(1.1);
+}
+
+.attend-event-btn:active{
+  transform: scale(0.9);
+}
+
+.text-lighter{
+  color: rgb(233, 230, 230);
+}
+
+.no-border{
+  border: none !important;
 }
 
 @media screen and (min-width: 992px) {
