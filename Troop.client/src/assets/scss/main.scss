@@ -138,6 +138,15 @@ form:invalid button[type="submit"] {
   text-transform: capitalize;
 }
 
+.event-card{
+  height: 30vh;
+  border-radius: 5px;
+  display: flex;
+  align-items: end;
+  padding: 0 0 5px 5px;
+  border: 2px solid #7541af;
+}
+
 @media screen and (min-width: 992px) {
   .bttn{
     width: 70%;

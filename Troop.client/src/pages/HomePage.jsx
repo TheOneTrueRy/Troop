@@ -42,7 +42,7 @@ function HomePage() {
       </div>
       <div className="row">
         <FilterBar />
-        <div className="col-12 pt-3">
+        <div className="col-12 pt-3 g-0">
           <div className="row">
             {events.map((e) => (
               <Event event={e} key={e.id} />

@@ -19,6 +19,11 @@ class EventsService {
       AppState.filteredEvents = AppState.events.filter(e => e.type == category)
     }
   }
+
+  async getEvent(eventId) {
+    const res = await api.get(`api/events/${eventId}`)
+    AppState.event = new Event(res.data)
+  }
 }
 
 export const eventsService = new EventsService();
