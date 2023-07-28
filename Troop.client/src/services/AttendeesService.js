@@ -11,10 +11,19 @@ class AttendeesService {
   }
 
   async attendEvent(eventId) {
-    const user = AppState.account;
-    const res = await api.post('api/tickets', { eventId, accountId: user.id })
-    AppState.eventTickets.push(new Ticket(res.data))
-    AppState.myTickets.push(new Ticket(res.data))
+    const res = await api.post('api/tickets', { eventId })
+    let ticket = new Ticket(res.data)
+    ticket.profile = AppState.account
+    AppState.eventTickets.push(ticket)
+    AppState.myTickets.push(ticket)
+  }
+
+  async unattendEvent(ticketId) {
+    const res = await api.delete(`api/tickets/${ticketId}`)
+    let eventTicketsIndex = AppState.eventTickets.findIndex(t => t.id == ticketId)
+    AppState.eventTickets.splice(eventTicketsIndex, 1)
+    let myTicketsIndex = AppState.myTickets.findIndex(t => t.id == ticketId)
+    AppState.myTickets.splice(myTicketsIndex, 1)
   }
 }
 

@@ -6,6 +6,7 @@ import Pop from "../utils/Pop.js";
 import { eventsService } from "../services/EventsService.js";
 import { attendeesService } from "../services/AttendeesService.js";
 import { FaEllipsisH } from "react-icons/fa";
+import { logger } from "../utils/Logger.js";
 
 function EventDetailsPage() {
   const { eventId } = useParams();
@@ -39,7 +40,19 @@ function EventDetailsPage() {
 
   async function attendEvent() {
     try {
-      await attendeesService.attendEvent(event.id)
+      await attendeesService.attendEvent(event?.id)
+    }
+    catch (error) {
+      Pop.error(error);
+    }
+  }
+
+  async function unattendEvent() {
+    try {
+      debugger
+      let ticket = AppState.myTickets.find(t => t.eventId == event?.id)
+      logger.log('Ticket:', ticket)
+      await attendeesService.unattendEvent(ticket?.id)
     }
     catch (error) {
       Pop.error(error);
@@ -52,7 +65,7 @@ function EventDetailsPage() {
         <div className="container">
           <div className={account?.id == event?.creator.id ? "row icy px-3 pb-4 pt-1" : "row icy px-3 pb-4 pt-4"}>
             {account?.id != null && event?.creator.id == account?.id && <div className="col-12 d-flex align-items-center justify-content-end">
-              <button className="btn fs-3 py-0 px-1 no-border">
+              <button className="btn fs-3 py-0 px-3 no-border icy">
                 <FaEllipsisH className="d-flex" />
               </button>
             </div>}
@@ -90,7 +103,7 @@ function EventDetailsPage() {
                     </span>
                   </div>
                   <div className="col-6 text-end">
-                    {account != null && event?.capacity > 0 && event?.isCanceled != true && attendees.findIndex(t => t.profile.id == account.id) == -1 && <button className="attend-event-btn fs-5 py-2 elevation-1 px-4" onClick={attendEvent}>
+                    {account != null && event?.capacity > 0 && event?.isCanceled != true && attendees.findIndex(t => t?.profile.id == account.id) == -1 && <button className="attend-event-btn fs-5 py-2 elevation-1 px-4" onClick={attendEvent}>
                       Attend Event
                     </button>}
                     {account == null && <button className="btn fs-5 elevation-1 py-2 px-4" disabled>
@@ -102,11 +115,29 @@ function EventDetailsPage() {
                     {account != null && event?.capacity == 0 && event?.isCanceled == false && <button className="btn fs-5 elevation-1 py-2 px-4" disabled>
                       This Event Is At Capacity
                     </button>}
+                    {account != null && attendees.findIndex(t => t?.profile.id == account.id) != -1 && <button className="attend-event-btn bg-danger fs-5 py-2 px-4 elevation-1" onClick={unattendEvent}>
+                      Delete Ticket
+                    </button>}
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="row mt-3">
+        <div className="col-12 g-0">
+          <span className="">
+            See who is attending
+          </span>
+        </div>
+        <div className="col-12 bg-dark bg-gradient px-2 py-2 rounded mt-2 elevation-2">
+          {attendees.length == 0 && <span className="fs-5">
+            No Attendees Yet!
+          </span>}
+          {attendees.map((a) => (
+            <img className="rounded-circle me-1" height={40} width={40} key={a?.id} src={a?.profile.picture} title={a.profile.name} />
+          ))}
         </div>
       </div>
     </div>
