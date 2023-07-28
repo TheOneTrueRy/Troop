@@ -68,7 +68,7 @@ namespace Troop.Repositories
       WHERE id = @eventId;
       ";
       int rows = _db.Execute(sql, new { ticketId, eventId });
-      return rows == 1;
+      return rows == 2;
     }
 
     internal List<Ticket> GetEventTickets(int eventId)

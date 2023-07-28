@@ -41,6 +41,7 @@ function EventDetailsPage() {
   async function attendEvent() {
     try {
       await attendeesService.attendEvent(event?.id)
+      event.capacity--
     }
     catch (error) {
       Pop.error(error);
@@ -52,7 +53,10 @@ function EventDetailsPage() {
       debugger
       let ticket = AppState.myTickets.find(t => t.eventId == event?.id)
       logger.log('Ticket:', ticket)
-      await attendeesService.unattendEvent(ticket?.id)
+      if (await Pop.confirm('Are you sure you wish to not attend this event?')) {
+        await attendeesService.unattendEvent(ticket?.id)
+        event.capacity++
+      }
     }
     catch (error) {
       Pop.error(error);
