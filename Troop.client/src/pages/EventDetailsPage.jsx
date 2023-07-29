@@ -7,6 +7,7 @@ import { eventsService } from "../services/EventsService.js";
 import { attendeesService } from "../services/AttendeesService.js";
 import { FaEllipsisH } from "react-icons/fa";
 import { logger } from "../utils/Logger.js";
+import { commentsService } from "../services/CommentsService.js";
 
 function EventDetailsPage() {
   const { eventId } = useParams();
@@ -17,7 +18,8 @@ function EventDetailsPage() {
   useEffect(() => {
     document.title = 'Troop - Event 🎉',
       getEvent(eventId),
-      getEventTickets(eventId)
+      getEventTickets(eventId),
+      getEventComments(eventId)
   }, [])
 
   async function getEvent(eventId) {
@@ -31,7 +33,7 @@ function EventDetailsPage() {
 
   async function getEventTickets(eventId) {
     try {
-      await attendeesService.getEventTickets(eventId)
+      await attendeesService.getEventTickets(eventId);
     }
     catch (error) {
       Pop.error(error);
@@ -40,8 +42,8 @@ function EventDetailsPage() {
 
   async function attendEvent() {
     try {
-      await attendeesService.attendEvent(event?.id)
-      event.capacity--
+      await attendeesService.attendEvent(event?.id);
+      event.capacity--;
     }
     catch (error) {
       Pop.error(error);
@@ -50,13 +52,21 @@ function EventDetailsPage() {
 
   async function unattendEvent() {
     try {
-      debugger
       let ticket = AppState.myTickets.find(t => t.eventId == event?.id)
       logger.log('Ticket:', ticket)
       if (await Pop.confirm('Are you sure you wish to not attend this event?')) {
-        await attendeesService.unattendEvent(ticket?.id)
-        event.capacity++
+        await attendeesService.unattendEvent(ticket?.id);
+        event.capacity++;
       }
+    }
+    catch (error) {
+      Pop.error(error);
+    }
+  }
+
+  async function getEventComments(eventId) {
+    try {
+      await commentsService.getEventComments(eventId);
     }
     catch (error) {
       Pop.error(error);
