@@ -20,7 +20,7 @@ function EventDetailsPage() {
   const account = AppState.account;
   const attendees = AppState.eventTickets;
   const comments = AppState.comments;
-  let editable = new Comment({})
+  let editable = new Comment({});
   let bindEditable = BindEditable(editable);
 
   useEffect(() => {
@@ -233,7 +233,7 @@ function EventDetailsPage() {
         </div>
       </div>
       <Modal id={'editEventModal'}>
-        <EditEvent event={event} />
+        <EditEvent />
       </Modal>
     </div>
 

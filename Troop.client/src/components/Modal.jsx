@@ -8,7 +8,7 @@ function Modal({ id, children }) {
   return (
     <div className="modal fade" id={`${id}`} tabIndex={-1} aria-labelledby="modalLabel" aria-hidden="true">
       <div className="modal-dialog modal-dialog-centered modal-fullscreen-lg-down">
-        <div className="modal-content bg-dark">
+        <div className="modal-content bg-dark p-2 pb-3">
           {children}
         </div>
       </div>
