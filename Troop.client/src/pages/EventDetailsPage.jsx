@@ -103,11 +103,11 @@ function EventDetailsPage() {
                 <button className="btn fs-3 py-0 px-3 no-border icy" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <FaEllipsisH className="d-flex" />
                 </button>
-                <ul className="dropdown-menu dropdown-menu-dark py-0" aria-labelledby="dropdownMenuButton1">
-                  <li className="selectable py-1 ps-1 rounded-top">
+                <ul className="dropdown-menu dropdown-menu-lg-end dropdown-menu-dark py-0" aria-labelledby="dropdownMenuButton1">
+                  <li className="selectable py-1 ps-1 rounded-top text-center">
                     Edit Event
                   </li>
-                  <li className="selectable py-1 ps-1 rounded-bottom">
+                  <li className="selectable py-1 ps-1 rounded-bottom text-center">
                     Cancel Event
                   </li>
                 </ul>
