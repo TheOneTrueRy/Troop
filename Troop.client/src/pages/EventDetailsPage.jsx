@@ -10,12 +10,14 @@ import { logger } from "../utils/Logger.js";
 import { commentsService } from "../services/CommentsService.js";
 import { BindEditable } from "../utils/FormHandler.js";
 import { Comment } from "../models/Comment.js";
+import CommentCard from "../components/CommentCard.jsx";
 
 function EventDetailsPage() {
   const { eventId } = useParams();
   const event = AppState.event;
   const account = AppState.account;
   const attendees = AppState.eventTickets;
+  const comments = AppState.comments;
   let editable = new Comment({})
   let bindEditable = BindEditable(editable);
 
@@ -194,6 +196,13 @@ function EventDetailsPage() {
                   </button>
                 </div>
               </form>
+              <div className="col-12 py-2">
+                <div className="container-fluid">
+                  {comments.map((comment) => (
+                    <CommentCard comment={comment} key={comment.id} />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
