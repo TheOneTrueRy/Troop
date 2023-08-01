@@ -154,7 +154,7 @@ form:invalid button[type="submit"] {
 }
 
 .bg-blur{
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 }
 
 .canceled{
@@ -182,19 +182,19 @@ form:invalid button[type="submit"] {
   -webkit-backdrop-filter: blur(8px);
 }
 
-.attend-event-btn{
+.my-prp-btn{
   background-color: #7541af;
   color: rgb(0, 0, 0);
   border: none;
   transition: 0.5s;
 }
 
-.attend-event-btn:hover{
-  transform: scale(1.1);
+.my-prp-btn:hover{
+  transform: scale(1.05);
 }
 
-.attend-event-btn:active{
-  transform: scale(0.9);
+.my-prp-btn:active{
+  transform: scale(0.95);
 }
 
 .text-lighter{
@@ -203,6 +203,10 @@ form:invalid button[type="submit"] {
 
 .no-border{
   border: none !important;
+}
+
+textarea{
+  resize: none;
 }
 
 @media screen and (min-width: 992px) {

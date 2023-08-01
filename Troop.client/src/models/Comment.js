@@ -3,5 +3,6 @@ export class Comment {
     this.id = data.id
     this.creator = data.creator
     this.body = data.body
+    this.eventId = data.eventId
   }
 }
