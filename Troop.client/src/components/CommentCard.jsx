@@ -6,7 +6,7 @@ function CommentCard({ comment }) {
 
   return (
 
-    <div className="row">
+    <div className="row my-2">
       <div className="col-2">
         <img src={comment.creator.picture} alt={`${comment.creator.name}`} className="comment-picture elevation-1" />
       </div>

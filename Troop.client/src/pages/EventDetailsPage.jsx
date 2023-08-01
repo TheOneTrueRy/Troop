@@ -165,7 +165,7 @@ function EventDetailsPage() {
             See who is attending
           </span>
         </div>
-        <div className="col-12 bg-dark bg-gradient px-2 py-2 rounded mt-2 elevation-2">
+        <div className="col-12 bg-grey bg-gradient px-2 py-2 rounded mt-2 elevation-2">
           {attendees.length == 0 && <span className="fs-5">
             No Attendees Yet!
           </span>}
@@ -174,13 +174,13 @@ function EventDetailsPage() {
           ))}
         </div>
       </div>
-      <div className="row mt-5 pt-5">
+      <div className="row mt-5 pt-5 mb-4">
         <div className="col-lg-10 offset-lg-1">
           <span>
             What are people saying
           </span>
           <div className="container-fluid mt-2">
-            <div className="row bg-dark bg-gradient py-2 rounded px-4">
+            <div className="row bg-grey bg-gradient py-2 rounded px-4">
               <div className="col-12 text-end py-2">
                 <span className="text-info">
                   Join the conversation
@@ -197,11 +197,18 @@ function EventDetailsPage() {
                 </div>
               </form>
               <div className="col-12 py-2">
-                <div className="container-fluid">
+                {comments.length > 0 && <div className="container-fluid py-2">
                   {comments.map((comment) => (
                     <CommentCard comment={comment} key={comment.id} />
                   ))}
-                </div>
+                </div>}
+                {comments.length == 0 && <div className="container-fluid">
+                  <div className="row text-center py-5">
+                    <span className="fs-1">
+                      <i>No Comments Yet!</i>
+                    </span>
+                  </div>
+                </div>}
               </div>
             </div>
           </div>
