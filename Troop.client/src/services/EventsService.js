@@ -31,6 +31,13 @@ class EventsService {
     AppState.event.isCanceled = true
   }
 
+  async editEvent(eventData) {
+    const res = await api.put(`api/events/${eventData.id}`, eventData)
+    let eventIndex = AppState.events.findIndex(e => e.id == eventData.id)
+    AppState.event = new Event(res.data)
+    AppState.events.splice(eventIndex, 1, new Event(res.data))
+  }
+
 }
 
 export const eventsService = new EventsService();

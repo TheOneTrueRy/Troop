@@ -11,6 +11,8 @@ import { commentsService } from "../services/CommentsService.js";
 import { BindEditable } from "../utils/FormHandler.js";
 import { Comment } from "../models/Comment.js";
 import CommentCard from "../components/CommentCard.jsx";
+import Modal from "../components/Modal.jsx";
+import EditEvent from "../components/EditEvent.jsx";
 
 function EventDetailsPage() {
   const { eventId } = useParams();
@@ -115,7 +117,7 @@ function EventDetailsPage() {
                   <FaEllipsisH className="d-flex" />
                 </button>
                 <ul className="dropdown-menu dropdown-menu-lg-end dropdown-menu-dark py-0" aria-labelledby="dropdownMenuButton1">
-                  <li className="selectable py-1 ps-1 rounded-top text-center">
+                  <li className="selectable py-1 ps-1 rounded-top text-center" data-bs-toggle="modal" data-bs-target="#editEventModal">
                     Edit Event
                   </li>
                   <li className="selectable py-1 ps-1 rounded-bottom text-center" onClick={cancelEvent}>
@@ -230,7 +232,11 @@ function EventDetailsPage() {
           </div>
         </div>
       </div>
+      <Modal id={'editEventModal'}>
+        <EditEvent event={event} />
+      </Modal>
     </div>
+
   )
 
 }
