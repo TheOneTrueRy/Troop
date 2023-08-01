@@ -93,6 +93,17 @@ function EventDetailsPage() {
     }
   }
 
+  async function cancelEvent() {
+    try {
+      if (await Pop.confirm('Are you SURE you wish to cancel this event? This is IRREVERSIBLE.')) {
+        await eventsService.cancelEvent(event.id);
+      }
+    }
+    catch (error) {
+      Pop.error(error);
+    }
+  }
+
   return (
     <div className="container-fluid">
       <div className="row event-details-card elevation-2" style={{ backgroundImage: `url(${event?.coverImg})` }}>
@@ -107,7 +118,7 @@ function EventDetailsPage() {
                   <li className="selectable py-1 ps-1 rounded-top text-center">
                     Edit Event
                   </li>
-                  <li className="selectable py-1 ps-1 rounded-bottom text-center">
+                  <li className="selectable py-1 ps-1 rounded-bottom text-center" onClick={cancelEvent}>
                     Cancel Event
                   </li>
                 </ul>
