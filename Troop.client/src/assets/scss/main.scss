@@ -158,7 +158,7 @@ form:invalid button[type="submit"] {
 }
 
 .canceled{
-  background-color: #d11956;
+  background-color: #d11956 !important;
   color: rgb(31, 30, 30);
   border-radius: 2px;
 }
@@ -221,6 +221,10 @@ textarea{
   border-radius: 50%;
   max-width: 100%;
   height: auto;
+}
+
+.ticket-card{
+  height: 25vh;
 }
 
 @media screen and (min-width: 992px) {

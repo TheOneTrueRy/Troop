@@ -137,7 +137,7 @@ function EventDetailsPage() {
                     </span>
                   </div>
                   <div className="col-6 text-end">
-                    {account != null && event?.capacity > 0 && event?.isCanceled != true && attendees.findIndex(t => t?.profile.id == account.id) == -1 && <button className="my-prp-btn fs-5 py-2 elevation-1 px-4" onClick={attendEvent}>
+                    {account != null && event?.capacity > 0 && event?.isCanceled != true && attendees.findIndex(t => t?.profile.id == account.id) == -1 && <button className="my-prp-btn fs-5 py-2 elevation-1 px-4 text-light" onClick={attendEvent}>
                       Attend Event
                     </button>}
                     {account == null && <button className="btn fs-5 elevation-1 py-2 px-4" disabled>

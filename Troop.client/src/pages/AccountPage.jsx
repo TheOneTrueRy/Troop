@@ -1,25 +1,27 @@
 import { observer } from "mobx-react";
 import React, { useEffect } from "react";
 import { AppState } from "../AppState.js";
+import { accountService } from "../services/AccountService.js";
+import TicketCard from "../components/TicketCard.jsx";
 
 function AccountPage() {
 
+  const tickets = AppState.myTickets;
+
   useEffect(() => {
-    document.title = 'Troop - Account 👤'
+    document.title = 'Troop - Account 👤',
+      accountService.getMyTickets()
   }, [])
 
   return (
-    <div className="account-page">
-      <div className="card">
-        <div className="card-body p-5 text-center">
-          <img src={AppState.account.picture}
-            alt={AppState.account.name}
-            className="rounded-circle" height="200" />
-          <p className="display-6 my-2">{AppState.account.name}</p>
-          <kbd>
-            {AppState.account.email}
-          </kbd>
-        </div>
+    <div className="container-fluid">
+      <div className="row mb-4">
+        <span className="fs-5 px-0 mt-3">
+          Upcoming Events
+        </span>
+        {tickets.map((ticket) => (
+          <TicketCard ticket={ticket} key={ticket.id} />
+        ))}
       </div>
     </div>
   )
