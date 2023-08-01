@@ -175,28 +175,28 @@ function EventDetailsPage() {
         </div>
       </div>
       <div className="row mt-5 pt-5 mb-4">
-        <div className="col-lg-10 offset-lg-1">
+        <div className="col-12 col-xl-10 offset-xl-1 g-0">
           <span>
             What are people saying
           </span>
           <div className="container-fluid mt-2">
             <div className="row bg-grey bg-gradient py-2 rounded px-4">
-              {account != null && <div className="col-12 text-end py-2">
+              {account != null && <div className="col-12 text-end py-2 g-0">
                 <span className="text-info">
                   Join the conversation
                 </span>
               </div>}
-              {account != null && <form onSubmit={postComment}>
-                <div className="col-12">
-                  <textarea name="body" id="body" cols={30} rows={5} placeholder="Tell the people..." className="w-100 rounded form-control" onChange={bindEditable} defaultValue={editable.body}></textarea>
+              {account != null && <form id="commentForm" onSubmit={postComment} className="g-0">
+                <div className="col-12 g-0">
+                  <textarea name="body" id="body" cols={30} rows={5} placeholder="Tell the people..." className="w-100 rounded form-control" onChange={bindEditable} defaultValue={editable.body} maxLength={2000}></textarea>
                 </div>
-                <div className="col-12 d-flex justify-content-end align-items-center my-3">
-                  <button type="submit" className="my-prp-btn px-4 py-2 elevation-1">
+                <div className="col-12 d-flex justify-content-end align-items-center my-3 g-0">
+                  <button type="submit" className="my-prp-btn px-4 py-2 elevation-1 text-light">
                     Post Comment
                   </button>
                 </div>
               </form>}
-              <div className="col-12 py-2">
+              <div className="col-12 py-2 g-0">
                 {comments.length > 0 && <div className="container-fluid py-2">
                   {comments.map((comment) => (
                     <CommentCard comment={comment} key={comment.id} />

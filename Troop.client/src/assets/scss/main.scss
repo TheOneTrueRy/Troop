@@ -55,7 +55,7 @@ form:invalid button[type="submit"] {
   font-size: 16px;
   font-family: "montserrat";
   text-decoration: none;
-  border: 2px solid #7541af;
+  border: 2px solid #4d0ba3;
   width: 40%;
   height: 50px;
   border-radius: 2px;
@@ -66,7 +66,7 @@ form:invalid button[type="submit"] {
 }
 
 .bttn::before{
-  background: #7541af;
+  background: #4d0ba3;
   content: "";
   position: absolute;
   top: 50%;
@@ -97,7 +97,7 @@ form:invalid button[type="submit"] {
   object-position: center;
   height: 30vw;
   width: 30vw;
-  border: 3px solid #7541af;
+  border: 3px solid #4d0ba3;
 }
 
 .home-header-pic{
@@ -108,7 +108,7 @@ form:invalid button[type="submit"] {
   -webkit-backdrop-filter: blur(5px);
   background-size: cover;
   background-position: center;
-  border: 2px solid #7541af;
+  border: 2px solid #4d0ba3;
 }
 
 .text-shadow{
@@ -136,7 +136,7 @@ form:invalid button[type="submit"] {
 }
 
 .border-purple{
-  border-color: #7541af !important;
+  border-color: #4d0ba3 !important;
 }
 
 .capitalize-first{
@@ -148,7 +148,7 @@ form:invalid button[type="submit"] {
   border-radius: 5px;
   display: flex;
   align-items: end;
-  border: 3px solid #7541af;
+  border: 3px solid #4d0ba3;
   background-size: cover;
   background-position: center;
 }
@@ -183,7 +183,7 @@ form:invalid button[type="submit"] {
 }
 
 .my-prp-btn{
-  background-color: #7541af;
+  background-color: #4d0ba3;
   color: rgb(0, 0, 0);
   border: none;
   transition: 0.5s;
@@ -211,14 +211,16 @@ textarea{
 
 .comment-body{
   min-height: 100%;
-  background-color: lightblue;
+  background-color: #4d0ba3;
 }
 
 .comment-picture{
   object-fit: cover;
   object-position: center;
-  height: 15vh;
-  width: 15vh;
+  width: 12vh;
+  border-radius: 50%;
+  max-width: 100%;
+  height: auto;
 }
 
 @media screen and (min-width: 992px) {
