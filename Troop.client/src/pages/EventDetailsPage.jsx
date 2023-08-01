@@ -99,9 +99,19 @@ function EventDetailsPage() {
         <div className="container">
           <div className={account?.id == event?.creator.id ? "row icy px-3 pb-4 pt-1" : "row icy px-3 pb-4 pt-4"}>
             {account?.id != null && event?.creator.id == account?.id && <div className="col-12 d-flex align-items-center justify-content-end">
-              <button className="btn fs-3 py-0 px-3 no-border icy">
-                <FaEllipsisH className="d-flex" />
-              </button>
+              <div className="dropdown">
+                <button className="btn fs-3 py-0 px-3 no-border icy" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <FaEllipsisH className="d-flex" />
+                </button>
+                <ul className="dropdown-menu dropdown-menu-dark py-0" aria-labelledby="dropdownMenuButton1">
+                  <li className="selectable py-1 ps-1 rounded-top">
+                    Edit Event
+                  </li>
+                  <li className="selectable py-1 ps-1 rounded-bottom">
+                    Cancel Event
+                  </li>
+                </ul>
+              </div>
             </div>}
             <div className="col-4 d-none d-lg-block event-details-pic elevation-1" style={{ backgroundImage: `url(${event?.coverImg})` }}>
 
@@ -181,12 +191,7 @@ function EventDetailsPage() {
           </span>
           <div className="container-fluid mt-2">
             <div className="row bg-grey bg-gradient py-2 rounded px-4">
-              {account != null && <div className="col-12 text-end py-2 g-0">
-                <span className="text-info">
-                  Join the conversation
-                </span>
-              </div>}
-              {account != null && <form id="commentForm" onSubmit={postComment} className="g-0">
+              {account != null && <form id="commentForm" onSubmit={postComment} className="g-0 pt-3">
                 <div className="col-12 g-0">
                   <textarea name="body" id="body" cols={30} rows={5} placeholder="Tell the people..." className="w-100 rounded form-control" onChange={bindEditable} defaultValue={editable.body} maxLength={2000}></textarea>
                 </div>
