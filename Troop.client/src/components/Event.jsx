@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 function Event({ event }) {
 
   return (
-
     <div className="col-12 col-md-6 col-lg-4 col-xl-3 px-3 py-2">
       <Link to={`events/${event.id}`} title={`Visit the details page of "${event.name}"!`}>
         <div className="event-card selectable" style={{ backgroundImage: `url(${event.coverImg})` }}>

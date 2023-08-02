@@ -26,7 +26,7 @@ function EditEvent() {
 
   return (
     // FIXME Just this whole weird editable and bindEditable situation, man.
-    <div className="container-fluid">
+    <div className="container-fluid px-3">
       <form onSubmit={editEvent}>
         <div className="row">
           <div className="col-12">
