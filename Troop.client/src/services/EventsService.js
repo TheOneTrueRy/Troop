@@ -1,6 +1,5 @@
 import { AppState } from "../AppState.js";
 import { Event } from "../models/Event.js";
-import { Ticket } from "../models/Ticket.js";
 import { logger } from "../utils/Logger.js";
 import { api } from "./AxiosService.js";
 
@@ -36,6 +35,11 @@ class EventsService {
     let eventIndex = AppState.events.findIndex(e => e.id == eventData.id)
     AppState.event = new Event(res.data)
     AppState.events.splice(eventIndex, 1, new Event(res.data))
+  }
+
+  async createEvent(eventData) {
+    const res = await api.post(`api/events`, eventData)
+    AppState.events.push(new Event(res.data))
   }
 
 }

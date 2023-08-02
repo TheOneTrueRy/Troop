@@ -3,6 +3,8 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { AppState } from "../AppState.js"
 import { AuthService } from "../services/AuthService.js"
+import Modal from "./Modal.jsx"
+import CreateEvent from "./CreateEvent.jsx"
 
 function Login() {
 
@@ -46,12 +48,15 @@ function Login() {
       <Link to={"Account"} className="bttn bttn3 text-uppercase mt-3 d-none d-lg-flex align-items-center justify-content-center text-light" title="Visit your Account page.">
         Account
       </Link>
-      <button className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light px-0" title="Open the Event Creation form.">
+      <button className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light px-0" title="Open the Event Creation form." data-bs-toggle="modal" data-bs-target="#createEventModal">
         New Event
       </button>
       <button onClick={logout} className="bttn bttn3 text-uppercase mt-3 mb-2 d-flex align-items-center justify-content-center text-light">
         Logout
       </button>
+      <Modal id={'createEventModal'}>
+        <CreateEvent />
+      </Modal>
     </div>
   )
 
