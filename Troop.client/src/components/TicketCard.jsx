@@ -18,7 +18,7 @@ function TicketCard({ ticket }) {
   }
 
   return (
-    <div className="col-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 mt-5 ticket-card" key={ticket?.id}>
+    <div className="col-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 mt-5 ticket-card g-0" key={ticket?.id}>
       <div className="container-fluid h-100">
         <div className="row h-100">
           <div className="col-4 g-0 event-details-card h-100" style={{ backgroundImage: `url(${ticket?.event?.coverImg})` }}>

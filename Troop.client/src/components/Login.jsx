@@ -30,22 +30,23 @@ function Login() {
       <Link to={"Account"} title="Visit your Account page." className="d-none d-lg-block">
         <img src={AppState.account?.picture} alt="Account Picture" className="account-picture selectable" />
       </Link>
-      <Link to={""} className="bttn bttn3 text-uppercase mt-3 d-flex d-lg-none align-items-center justify-content-center text-light" data-bs-toggle="collapse" data-bs-target="#navbarText" title="Visit the Home page.">
-        Home
+      <Link to={""} className="bttn bttn3 text-uppercase mt-3 d-flex d-lg-none align-items-center justify-content-center text-light" title="Visit the Home page.">
+        <div data-bs-toggle="collapse" data-bs-target="#navbarText" className="h-100 w-100 d-flex align-items-center justify-content-center">
+          Home
+        </div>
       </Link>
       <Link to={""} className="bttn bttn3 text-uppercase mt-3 d-none d-lg-flex align-items-center justify-content-center text-light" title="Visit the Home page.">
         Home
       </Link>
-      <Link to={"Account"} className="bttn bttn3 text-uppercase mt-3 d-flex d-lg-none align-items-center justify-content-center text-light" data-bs-toggle="collapse" data-bs-target="#navbarText" title="Visit your Account page.">
-        Account
+      <Link to={"Account"} className="bttn bttn3 text-uppercase mt-3 d-flex d-lg-none align-items-center justify-content-center text-light" title="Visit your Account page.">
+        <div data-bs-toggle="collapse" data-bs-target="#navbarText" className="h-100 w-100 d-flex align-items-center justify-content-center">
+          Account
+        </div>
       </Link>
       <Link to={"Account"} className="bttn bttn3 text-uppercase mt-3 d-none d-lg-flex align-items-center justify-content-center text-light" title="Visit your Account page.">
         Account
       </Link>
-      <button className="bttn bttn3 text-uppercase mt-3 d-flex d-lg-none align-items-center justify-content-center text-light px-0" data-bs-toggle="collapse" data-bs-target="#navbarText" title="Open the Event Creation form.">
-        New Event
-      </button>
-      <button className="bttn bttn3 text-uppercase mt-3 d-none d-lg-flex align-items-center justify-content-center text-light px-0" title="Open the Event Creation form.">
+      <button className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light px-0" title="Open the Event Creation form.">
         New Event
       </button>
       <button onClick={logout} className="bttn bttn3 text-uppercase mt-3 mb-2 d-flex align-items-center justify-content-center text-light">

@@ -84,7 +84,7 @@ function EventDetailsPage() {
   async function postComment() {
     try {
       window.event.preventDefault()
-      editable.eventId = event.id
+      editable.eventId = event?.id
       await commentsService.postComment(editable)
       editable = new Comment({})
       // @ts-ignore
@@ -98,7 +98,7 @@ function EventDetailsPage() {
   async function cancelEvent() {
     try {
       if (await Pop.confirm('Are you SURE you wish to cancel this event? This is IRREVERSIBLE.')) {
-        await eventsService.cancelEvent(event.id);
+        await eventsService.cancelEvent(event?.id);
       }
     }
     catch (error) {
@@ -110,7 +110,7 @@ function EventDetailsPage() {
     <div className="container-fluid">
       <div className="row event-details-card elevation-2" style={{ backgroundImage: `url(${event?.coverImg})` }}>
         <div className="container">
-          <div className={account?.id == event?.creator.id ? "row icy px-3 pb-4 pt-1" : "row icy px-3 pb-4 pt-4"}>
+          <div className={account?.id == event?.creator.id ? "row icy px-3 pb-4 pt-1 align-items-center" : "row icy px-3 pb-4 pt-4 align-items-center"}>
             {account?.id != null && event?.creator.id == account?.id && <div className="col-12 d-flex align-items-center justify-content-end">
               <div className="dropdown">
                 <button className="btn fs-3 py-0 px-3 no-border icy" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -193,7 +193,7 @@ function EventDetailsPage() {
             No Attendees Yet!
           </span>}
           {attendees.map((a) => (
-            <img className="rounded-circle me-1" height={40} width={40} key={a?.id} src={a?.profile.picture} title={a.profile.name} />
+            <img className="rounded-circle me-1" height={40} width={40} key={a?.id} src={a?.profile.picture} title={a?.profile.name} />
           ))}
         </div>
       </div>
