@@ -50,7 +50,7 @@ function FilterBar() {
           </span>
         </div>
         <div className={"col-4 col-lg-2 d-flex justify-content-center align-items-center py-3 selectable bg-dark bg-gradient other " + (filter == 'other' ? 'border-bottom border-purple border-3' : '')} data-category="other" onClick={userChangeFilter}>
-          <span className="fs-5 text-shadow">
+          <span className="fs-5 text-shadow" title="Show only Other-type events.">
             Other
           </span>
         </div>
