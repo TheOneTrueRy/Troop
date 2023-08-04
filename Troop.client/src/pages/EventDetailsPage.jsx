@@ -24,10 +24,11 @@ function EventDetailsPage() {
   let bindEditable = BindEditable(editable);
 
   useEffect(() => {
-    document.title = 'Troop - Event 🎉',
-      getEvent(eventId),
-      getEventTickets(eventId),
-      getEventComments(eventId)
+    document.title = 'Troop - Event 🎉';
+    getEvent(eventId);
+    getEventTickets(eventId);
+    getEventComments(eventId);
+    window.scrollTo(0, 0);
   }, [])
 
   async function getEvent(eventId) {

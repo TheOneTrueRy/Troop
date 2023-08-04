@@ -12,6 +12,7 @@ function HomePage() {
   useEffect(() => {
     document.title = 'Troop - Home 🏠';
     getEvents();
+    window.scrollTo(0, 0);
   }, [])
 
   async function getEvents() {

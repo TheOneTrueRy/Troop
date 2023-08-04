@@ -9,8 +9,8 @@ import { AppState } from "../AppState.js";
 
 function EditEvent() {
   const event = AppState.event;
-  let editable = new Event({ event });
-  let bindEditable = BindEditable(editable);
+  const editable = {};
+  const bindEditable = BindEditable(editable);
 
   async function editEvent() {
     try {

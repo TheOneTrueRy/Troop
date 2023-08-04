@@ -9,8 +9,9 @@ function AccountPage() {
   const tickets = AppState.myTickets;
 
   useEffect(() => {
-    document.title = 'Troop - Account 👤',
-      accountService.getMyTickets()
+    document.title = 'Troop - Account 👤';
+    accountService.getMyTickets();
+    window.scrollTo(0, 0);
   }, [])
 
   return (
