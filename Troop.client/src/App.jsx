@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { Navbar } from './components/Navbar.jsx'
+import Modal from "./components/Modal.jsx"
+import CreateEvent from "./components/CreateEvent.jsx"
 
 
 export function App() {
@@ -28,7 +30,9 @@ export function App() {
           </div>
         </div>
       </div>
-
+      <Modal id={'createEventModal'}>
+        <CreateEvent />
+      </Modal>
     </div>
   )
 }

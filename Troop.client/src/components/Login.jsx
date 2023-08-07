@@ -3,8 +3,6 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { AppState } from "../AppState.js"
 import { AuthService } from "../services/AuthService.js"
-import Modal from "./Modal.jsx"
-import CreateEvent from "./CreateEvent.jsx"
 
 function Login() {
 
@@ -54,9 +52,6 @@ function Login() {
       <button onClick={logout} className="bttn bttn3 text-uppercase mt-3 mb-2 d-flex align-items-center justify-content-center text-light">
         Logout
       </button>
-      <Modal id={'createEventModal'}>
-        <CreateEvent />
-      </Modal>
     </div>
   )
 
