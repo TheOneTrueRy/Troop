@@ -111,39 +111,39 @@ function EventDetailsPage() {
     <div className="container-fluid">
       <div className="row event-details-card elevation-2" style={{ backgroundImage: `url(${event?.coverImg})` }}>
         <div className="container">
-          <div className={account?.id == event?.creator.id ? "row icy px-3 pb-4 pt-1 align-items-center" : "row icy px-3 pb-4 pt-4 align-items-center"}>
+          <div className={account?.id == event?.creator.id ? "row icy px-3 pb-4 pt-1" : "row icy px-3 pb-4 pt-4"}>
             {account?.id != null && event?.creator.id == account?.id && <div className="col-12 d-flex align-items-center justify-content-end">
               <div className="dropdown">
                 <button className="btn fs-3 py-0 px-3 no-border icy" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <FaEllipsisH className="d-flex" />
                 </button>
                 <ul className="dropdown-menu dropdown-menu-lg-end dropdown-menu-dark py-0" aria-labelledby="dropdownMenuButton1">
-                  <li className="selectable py-1 ps-1 rounded-top text-center" data-bs-toggle="modal" data-bs-target="#editEventModal">
+                  {/* FIXME Edit Event Functionality Disabled until fixed */}
+                  {/* <li className="selectable py-1 ps-1 rounded-top text-center" data-bs-toggle="modal" data-bs-target="#editEventModal">
                     Edit Event
-                  </li>
+                  </li> */}
                   <li className="selectable py-1 ps-1 rounded-bottom text-center" onClick={cancelEvent}>
                     Cancel Event
                   </li>
                 </ul>
               </div>
             </div>}
-            <div className="col-4 d-none d-lg-block event-details-pic elevation-1" style={{ backgroundImage: `url(${event?.coverImg})` }}>
-
+            <div className="col-4 d-none d-lg-flex event-details-pic elevation-1" style={{ backgroundImage: `url(${event?.coverImg})` }}>
             </div>
-            <div className="col-12 col-lg-8 py-1 ps-0 ps-lg-2 pe-0">
+            <div className="col-12 col-lg-8 py-1 ps-0 ps-lg-2 pe-0 ">
               <div className="container-fluid h-100 d-flex flex-column justify-content-between">
                 <div className="row">
-                  <div className="col-6">
+                  <div className="col-8">
                     <span className="fs-4 text-shadow">
                       {event?.name}
                     </span>
                   </div>
-                  <div className="col-6 text-end">
+                  <div className="col-4 text-end">
                     <span className="fs-5 text-shadow">
                       {event?.startDate}
                     </span>
                   </div>
-                  <div className="col-6">
+                  <div className="col-12">
                     <span className="fs-5 text-shadow">
                       {event?.location}
                     </span>
