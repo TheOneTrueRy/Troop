@@ -34,7 +34,7 @@ function FilterBar() {
             Conventions
           </span>
         </div>
-        <div className={"col-4 col-lg-2 d-flex justify-content-center align-items-center py-3 selectable bg-dark bg-gradient sports " + (filter == 'sport' ? 'border-bottom border-purple border-3' : '')} data-category="sport" onClick={userChangeFilter} title="Show only Sports-type events.">
+        <div className={"col-4 col-lg-2 d-flex justify-content-center align-items-center py-3 selectable bg-dark bg-gradient sports " + (filter == 'sport' ? 'border-bottom border-purple border-3' : '')} data-category="sports" onClick={userChangeFilter} title="Show only Sports-type events.">
           <span className="fs-5 text-shadow">
             Sports
           </span>

@@ -25,6 +25,11 @@ class AccountService {
     AppState.myTickets = res.data.map(t => new Ticket(t))
     logger.log('My Tickets:', AppState.myTickets)
   }
+
+  async editAccount(accountData) {
+    const res = await api.put('/account', accountData)
+    AppState.account = res.data
+  }
 }
 
 export const accountService = new AccountService()

@@ -1,3 +1,4 @@
+import { Router } from "react-router-dom";
 import { AppState } from "../AppState.js";
 import { Event } from "../models/Event.js";
 import { logger } from "../utils/Logger.js";
@@ -40,6 +41,7 @@ class EventsService {
   async createEvent(eventData) {
     const res = await api.post(`api/events`, eventData)
     AppState.events.push(new Event(res.data))
+    return res.data.id
   }
 
 }
