@@ -190,10 +190,10 @@ function EventDetailsPage() {
           </span>
         </div>
         <div className="col-12 bg-grey bg-gradient px-2 py-2 rounded mt-2 elevation-2">
-          {attendees.length == 0 && event.isCanceled === false && <span className="fs-5">
+          {attendees.length == 0 && event?.isCanceled === false && <span className="fs-5">
             No Attendees Yet!
           </span>}
-          {event.isCanceled == true && <span className="fs-5">
+          {event?.isCanceled == true && <span className="fs-5">
             This event has been canceled.
           </span>}
           {attendees.map((a) => (
