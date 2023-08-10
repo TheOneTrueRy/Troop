@@ -11,7 +11,7 @@ function CommentCard({ comment }) {
   async function deleteComment() {
     try {
       if (await Pop.confirm('Are you sure you wish to delete this comment? This is IRREVERSIBLE.')) {
-        await commentsService.deleteComment(comment.id)
+        await commentsService.deleteComment(comment?.id)
       }
     }
     catch (error) {
@@ -28,7 +28,7 @@ function CommentCard({ comment }) {
       <div className="col-10 comment-body d-flex flex-column py-2 rounded bg-gradient">
         <span className="fw-bold pb-1 d-flex justify-content-between align-items-center">
           {comment.creator.name}
-          {AppState.account.id == comment.creator.id && <button className="btn py-1 px-2 no-border canceled" title="Delete Your Comment." type="button" onClick={deleteComment}>
+          {AppState.account != null && AppState.account.id == comment.creator.id && <button className="btn py-1 px-2 no-border canceled" title="Delete Your Comment." type="button" onClick={deleteComment}>
             <FaTrash className="d-flex" />
           </button>}
         </span>
