@@ -13,12 +13,12 @@ export function App() {
         <div className="row">
           <div className="col-12 col-lg-10 order-2 order-lg-1">
             <div className="row">
-              <div className="col-12 bg-dark bg-gradient ps-4 pt-1 d-lg-flex d-none">
-                <Link to={''} title="Return to Homepage." className="pointer text-light">
-                  <h1>Troop 🐵</h1>
+              <div className="col-12 bg-dark bg-gradient ps-4 py-2 d-lg-flex d-none">
+                <Link to={''} title="Return to Homepage." className="pointer">
+                  <img src="/TroopLogo.png" alt="Troop Logo" className="troop-logo" />
                 </Link>
               </div>
-              <div className="col-12 px-4">
+              <div className="col-12 px-4 mb-5">
                 <main>
                   <Outlet />
                 </main>

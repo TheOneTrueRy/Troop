@@ -9,17 +9,17 @@ function Event({ event }) {
     <div className="col-12 col-md-6 col-lg-4 col-xl-3 px-3 py-2">
       <Link to={`events/${event.id}`} title={`Visit the details page of "${event.name}"!`}>
         <div className="event-card selectable" style={{ backgroundImage: `url(${event.coverImg})` }}>
-          <div className="w-100 d-flex flex-column bg-blur bottom-event-card-rounded px-1">
-            <span className="fs-5 text-light text-shadow ps-1">
+          <div className="w-100 d-flex flex-column bg-blur bottom-event-card-rounded">
+            <span className="fs-5 text-light text-shadow ps-2">
               {event.name}
             </span>
-            <span className="text-light text-shadow ps-1">
+            <span className="text-light text-shadow ps-2">
               {event.location}
             </span>
-            <span className="text-light text-shadow ps-1">
+            <span className="text-light text-shadow ps-2">
               {new Date(event.startDate).toLocaleDateString('en-US')}
             </span>
-            {event.capacity != 0 && event.isCanceled == false && <span className="text-light text-shadow text-end pe-1">
+            {event.capacity != 0 && event.isCanceled == false && <span className="text-light text-shadow text-end pe-2">
               {event.capacity} spots left
             </span>}
             {event.capacity == 0 && event.isCanceled == false && <span className="text-center w-100 fw-bold canceled">

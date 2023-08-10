@@ -57,6 +57,7 @@ function CreateEvent() {
           <div className="col-6 pt-2">
             <label htmlFor="type">Event Type</label>
             <select name="type" id="type" className="form-control bg-dark text-light" defaultValue={editable.type} onChange={bindEditable} required placeholder="Event Type...">
+              <option value="" selected disabled hidden style={{ display: "none" }}></option>
               <option value="convention">Convention</option>
               <option value="sport">Sports</option>
               <option value="digital">Digital</option>
