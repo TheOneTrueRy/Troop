@@ -24,10 +24,10 @@ function Login() {
 
   const authenticated = (
     <div className="mt-2 my-lg-0 w-100 d-flex align-items-center flex-column">
-      <Link to={"Account"} title="Visit your Account page." data-bs-toggle="collapse" data-bs-target="#navbarText" className="d-lg-none">
+      <Link to={"account"} title="Visit your Account page." data-bs-toggle="collapse" data-bs-target="#navbarText" className="d-lg-none">
         <img src={AppState.account?.picture} alt="Account Picture" className="account-picture selectable" />
       </Link>
-      <Link to={"Account"} title="Visit your Account page." className="d-none d-lg-block">
+      <Link to={"account"} title="Visit your Account page." className="d-none d-lg-block">
         <img src={AppState.account?.picture} alt="Account Picture" className="account-picture selectable" />
       </Link>
       <Link to={""} className="bttn bttn3 text-uppercase mt-3 d-flex d-lg-none align-items-center justify-content-center text-light" title="Visit the Home page.">
@@ -38,12 +38,12 @@ function Login() {
       <Link to={""} className="bttn bttn3 text-uppercase mt-3 d-none d-lg-flex align-items-center justify-content-center text-light" title="Visit the Home page.">
         Home
       </Link>
-      <Link to={"Account"} className="bttn bttn3 text-uppercase mt-3 d-flex d-lg-none align-items-center justify-content-center text-light" title="Visit your Account page.">
+      <Link to={"account"} className="bttn bttn3 text-uppercase mt-3 d-flex d-lg-none align-items-center justify-content-center text-light" title="Visit your Account page.">
         <div data-bs-toggle="collapse" data-bs-target="#navbarText" className="h-100 w-100 d-flex align-items-center justify-content-center">
           Account
         </div>
       </Link>
-      <Link to={"Account"} className="bttn bttn3 text-uppercase mt-3 d-none d-lg-flex align-items-center justify-content-center text-light" title="Visit your Account page.">
+      <Link to={"account"} className="bttn bttn3 text-uppercase mt-3 d-none d-lg-flex align-items-center justify-content-center text-light" title="Visit your Account page.">
         Account
       </Link>
       <button className="bttn bttn3 text-uppercase mt-3 d-flex align-items-center justify-content-center text-light px-0" title="Open the Event Creation form." data-bs-toggle="modal" data-bs-target="#createEventModal">

@@ -54,5 +54,11 @@ namespace Troop.Services
       List<Ticket> tickets = _repo.GetEventTickets(eventId);
       return tickets;
     }
+
+    internal int CancelTickets(int eventId)
+    {
+      int rows = _repo.CancelTickets(eventId);
+      return rows;
+    }
   }
 }

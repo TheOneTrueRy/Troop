@@ -29,6 +29,9 @@ class EventsService {
   async cancelEvent(eventId) {
     const res = await api.delete(`api/events/${eventId}`)
     AppState.event = new Event(res.data)
+    AppState.eventTickets = [];
+    let eventTicketIndex = AppState.myTickets.findIndex(t => t.eventId == AppState.event.id)
+    AppState.myTickets.splice(eventTicketIndex, 1)
   }
 
   async editEvent(eventData) {

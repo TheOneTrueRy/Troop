@@ -7,7 +7,7 @@ import { eventsService } from "../services/EventsService.js";
 import { useNavigate } from "react-router-dom";
 
 function CreateEvent() {
-  let editable = new Event({ type: 'convention' });
+  let editable = new Event({});
   let bindEditable = BindEditable(editable);
   const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ function CreateEvent() {
     try {
       window.event.preventDefault()
       let eventId = await eventsService.createEvent(editable);
-      editable = new Event({ type: 'convention' });
+      editable = new Event({});
       // @ts-ignore
       document.getElementById('createFormEvent').reset();
       Pop.success('Event successfully created!');

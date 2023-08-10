@@ -88,5 +88,15 @@ namespace Troop.Repositories
       }, new { eventId }).ToList();
       return tickets;
     }
+
+    internal int CancelTickets(int eventId)
+    {
+      string sql = @"
+      DELETE FROM tickets
+      WHERE eventId = @eventId;
+      ";
+      int rows = _db.Execute(sql, new { eventId });
+      return rows;
+    }
   }
 }

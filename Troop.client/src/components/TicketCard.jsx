@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import Pop from "../utils/Pop.js";
 import { attendeesService } from "../services/AttendeesService.js";
+import { Link } from "react-router-dom";
 
 function TicketCard({ ticket }) {
 
@@ -21,16 +22,18 @@ function TicketCard({ ticket }) {
     <div className="col-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 mt-5 ticket-card g-0" key={ticket?.id}>
       <div className="container-fluid h-100">
         <div className="row h-100">
-          <div className="col-4 g-0 event-details-card h-100" style={{ backgroundImage: `url(${ticket?.event?.coverImg})` }}>
-
-          </div>
+          {/* FIXME Just appends it onto the end of current URL */}
+          <Link to={`events/${ticket.event.id}`} title={`Visit the details page of "${ticket.event.name}"!`} className="col-4 g-0 event-details-card h-100" style={{ backgroundImage: `url(${ticket?.event?.coverImg})` }}>
+          </Link>
           <div className="col-8 bg-grey bg-gradient py-2 px-1">
             <div className="container-fluid h-100 d-flex flex-column justify-content-between">
               <div className="row">
                 <div className="col-12 pb-2">
-                  <span className="fw-bold">
-                    {ticket.event.name}
-                  </span>
+                  <Link to={`events/${ticket.event.id}`} title={`Visit the details page of "${ticket.event.name}"!`} className="text-light">
+                    <span className="fw-bold">
+                      {ticket.event.name}
+                    </span>
+                  </Link>
                 </div>
                 <div className="col-12">
                   <span>

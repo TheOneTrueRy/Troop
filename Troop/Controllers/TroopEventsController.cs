@@ -89,6 +89,7 @@ namespace Troop.Controllers
       {
         Account userInfo = await _auth.GetUserInfoAsync<Account>(HttpContext);
         TroopEvent canceledEvent = troopEventsService.CancelEvent(eventId, userInfo.Id);
+        int ticketsCanceled = ticketsService.CancelTickets(eventId);
         return Ok(canceledEvent);
       }
       catch (Exception e)
