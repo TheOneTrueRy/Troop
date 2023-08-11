@@ -96,6 +96,10 @@ function EventDetailsPage() {
     }
   }
 
+  function setEdit() {
+    AppState.editing = event
+  }
+
   async function cancelEvent() {
     try {
       if (await Pop.confirm('Are you SURE you wish to cancel this event? This is IRREVERSIBLE.')) {
@@ -112,16 +116,15 @@ function EventDetailsPage() {
       <div className="row event-details-card elevation-2" style={{ backgroundImage: `url(${event?.coverImg})` }}>
         <div className="container">
           <div className={account?.id == event?.creator.id ? "row icy px-3 pb-4 pt-1" : "row icy px-3 pb-4 pt-4"}>
-            {account?.id != null && event?.creator.id == account?.id && <div className="col-12 d-flex align-items-center justify-content-end">
+            {account?.id != null && event?.creator.id == account?.id && event?.isCanceled === false && <div className="col-12 d-flex align-items-center justify-content-end">
               <div className="dropdown">
                 <button className="btn fs-3 py-0 px-3 no-border icy" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <FaEllipsisH className="d-flex" />
                 </button>
                 <ul className="dropdown-menu dropdown-menu-lg-end dropdown-menu-dark py-0" aria-labelledby="dropdownMenuButton1">
-                  {/* FIXME Edit Event Functionality Disabled until fixed */}
-                  {/* <li className="selectable py-1 ps-1 rounded-top text-center" data-bs-toggle="modal" data-bs-target="#editEventModal">
+                  <li className="selectable py-1 ps-1 rounded-top text-center" data-bs-toggle="modal" data-bs-target="#editEventModal" onClick={setEdit}>
                     Edit Event
-                  </li> */}
+                  </li>
                   <li className="selectable py-1 ps-1 rounded-bottom text-center" onClick={cancelEvent}>
                     Cancel Event
                   </li>
@@ -236,7 +239,7 @@ function EventDetailsPage() {
           </div>
         </div>
       </div>
-      <Modal id={'editEventModal'}>
+      <Modal id='editEventModal'>
         <EditEvent />
       </Modal>
     </div>

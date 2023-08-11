@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import FilterBar from "../components/FilterBar.jsx";
 import Pop from "../utils/Pop.js";
 import { eventsService } from "../services/EventsService.js";

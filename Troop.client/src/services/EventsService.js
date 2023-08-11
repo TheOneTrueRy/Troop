@@ -22,8 +22,10 @@ class EventsService {
   }
 
   async getEvent(eventId) {
+    AppState.event = null
     const res = await api.get(`api/events/${eventId}`)
     AppState.event = new Event(res.data)
+    AppState.event.startDate = new Date(AppState.event.startDate).toLocaleDateString('fr-CA')
   }
 
   async cancelEvent(eventId) {

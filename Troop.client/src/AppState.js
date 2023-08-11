@@ -19,6 +19,8 @@ class ObservableAppState {
   /** @type {import('./models/Comment.js').Comment[]} */
   comments = []
 
+  editing = null
+
   constructor() {
     makeAutoObservable(this)
   }

@@ -48,7 +48,7 @@ function CreateEvent() {
           </div>
           <div className="col-6 pt-2">
             <label htmlFor="startDate">Event Start Date</label>
-            <input type="date" name="startDate" id="startDate" className="form-control bg-dark text-light" defaultValue={editable.startDate} onChange={bindEditable} min={new Date().toLocaleDateString('fr-CA')} required />
+            <input type="date" name="startDate" id="startDate" className="form-control bg-dark text-light input-dark" defaultValue={editable.startDate} onChange={bindEditable} min={new Date().toLocaleDateString('fr-CA')} required />
           </div>
           <div className="col-6 pt-2">
             <label htmlFor="capacity">Event Capacity</label>
@@ -56,8 +56,8 @@ function CreateEvent() {
           </div>
           <div className="col-6 pt-2">
             <label htmlFor="type">Event Type</label>
-            <select name="type" id="type" className="form-control bg-dark text-light" defaultValue={editable.type} onChange={bindEditable} required placeholder="Event Type...">
-              <option value="" selected disabled hidden style={{ display: "none" }}></option>
+            <select name="type" id="type" className="form-control bg-dark text-light" defaultValue={""} onChange={bindEditable} required placeholder="Event Type...">
+              <option value="" disabled hidden style={{ display: "none" }}></option>
               <option value="convention">Convention</option>
               <option value="sport">Sports</option>
               <option value="digital">Digital</option>
