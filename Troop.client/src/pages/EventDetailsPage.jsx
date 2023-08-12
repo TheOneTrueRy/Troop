@@ -210,19 +210,19 @@ function EventDetailsPage() {
             What are people saying
           </span>
           <div className="container-fluid mt-2">
-            <div className="row bg-grey bg-gradient py-2 rounded px-4">
+            <div className="row bg-grey bg-gradient py-lg-2 rounded px-2 px-lg-4">
               {account != null && <form id="commentForm" onSubmit={postComment} className="g-0 pt-3">
                 <div className="col-12 g-0">
                   <textarea name="body" id="body" cols={30} rows={5} placeholder="Tell the people..." className="w-100 rounded form-control" onChange={bindEditable} defaultValue={editable.body} maxLength={2000}></textarea>
                 </div>
-                <div className="col-12 d-flex justify-content-end align-items-center my-3 g-0">
+                <div className="col-12 d-flex justify-content-end align-items-center mb-3 mt-2 g-0">
                   <button type="submit" className="my-prp-btn px-4 py-2 elevation-1 text-light">
                     Post Comment
                   </button>
                 </div>
               </form>}
-              <div className="col-12 py-2 g-0">
-                {comments.length > 0 && <div className="container-fluid py-2">
+              <div className="col-12 g-0">
+                {comments.length > 0 && <div className="container-fluid pb-2">
                   {comments.map((comment) => (
                     <CommentCard comment={comment} key={comment.id} />
                   ))}

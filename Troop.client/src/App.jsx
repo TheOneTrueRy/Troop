@@ -18,7 +18,7 @@ export function App() {
                   <img src="/TroopLogo.png" alt="Troop Logo" className="troop-logo" />
                 </Link>
               </div>
-              <div className="col-12 px-4 mb-5">
+              <div className="col-12 px-3 mb-3 mt-1">
                 <main>
                   <Outlet />
                 </main>
