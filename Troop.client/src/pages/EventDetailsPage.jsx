@@ -115,7 +115,7 @@ function EventDetailsPage() {
     <div className="container-fluid">
       <div className="row event-details-card elevation-2" style={{ backgroundImage: `url(${event?.coverImg})` }}>
         <div className="container">
-          <div className={account?.id == event?.creator.id ? "row icy px-3 pb-4 pt-1" : "row icy px-3 pb-4 pt-4"}>
+          <div className={account?.id == event?.creator.id ? "row icy px-lg-3 pb-3 pb-lg-4 pt-1" : "row icy px-lg-3 pb-3 pb-lg-4 pt-4"}>
             {account?.id != null && event?.creator.id == account?.id && event?.isCanceled === false && <div className="col-12 d-flex align-items-center justify-content-end">
               <div className="dropdown">
                 <button className="btn fs-3 py-0 px-3 no-border icy" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -136,14 +136,14 @@ function EventDetailsPage() {
             <div className="col-12 col-lg-8 py-1 ps-0 ps-lg-2 pe-0 ">
               <div className="container-fluid h-100 d-flex flex-column justify-content-between">
                 <div className="row">
-                  <div className="col-8">
+                  <div className="col-12 col-lg-8">
                     <span className="fs-4 text-shadow">
                       {event?.name}
                     </span>
                   </div>
-                  <div className="col-4 text-end">
+                  <div className="col-12 col-lg-4 text-lg-end">
                     <span className="fs-5 text-shadow">
-                      {event?.startDate}
+                      {new Date(event?.startDate).toLocaleDateString('en-US')}
                     </span>
                   </div>
                   <div className="col-12">
