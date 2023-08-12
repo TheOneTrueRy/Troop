@@ -41,7 +41,7 @@ function TicketCard({ ticket }) {
                 </div>
                 <div className="col-12">
                   <span>
-                    {ticket.event.startDate}
+                    {new Date(ticket.event.startDate).toLocaleDateString('en-US')}
                   </span>
                 </div>
               </div>
