@@ -10,7 +10,9 @@ class CommentsService {
 
   async postComment(commentData) {
     const res = await api.post(`api/comments`, commentData)
-    AppState.comments.push(new Comment(res.data))
+    commentData = res.data
+    commentData.creator = AppState.account
+    AppState.comments.push(new Comment(commentData))
   }
 
   async deleteComment(commentId) {
