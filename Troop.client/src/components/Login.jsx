@@ -12,7 +12,7 @@ function Login() {
 
   function logout() {
     localStorage.removeItem('user-token')
-    AuthService.logout({})
+    AuthService.logout({ returnTo: window.location.origin })
   }
 
   const notAuthenticated = (
