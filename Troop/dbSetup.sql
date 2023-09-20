@@ -1,4 +1,4 @@
--- Active: 1691396358274@@SG-hot-edam-397-7757-mysql-master.servers.mongodirector.com@3306@Sandbox
+-- Active: 1694898014716@@SG-surf-noodle-9614-7850-mysql-master.servers.mongodirector.com@3306@Sandbox
 CREATE TABLE IF NOT EXISTS accounts(
   id VARCHAR(255) NOT NULL primary key COMMENT 'primary key',
   createdAt DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT 'Time Created',
@@ -20,7 +20,6 @@ CREATE TABLE IF NOT EXISTS events(
   startDate VARCHAR(100) NOT NULL,
   isCanceled BOOLEAN DEFAULT false,
   type VARCHAR(40) NOT NULL,
-
   FOREIGN KEY (creatorId) REFERENCES accounts(id) ON DELETE CASCADE
 ) default charset utf8mb4 COMMENT '';
 
@@ -29,7 +28,6 @@ CREATE TABLE IF NOT EXISTS tickets(
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   eventId INT NOT NULL,
   accountId VARCHAR(255) NOT NULL,
-
   FOREIGN KEY (eventId) REFERENCES events(id) ON DELETE CASCADE,
   FOREIGN KEY (accountId) REFERENCES accounts(id) ON DELETE CASCADE
 ) default charset utf8mb4 COMMENT '';
@@ -40,7 +38,6 @@ CREATE TABLE IF NOT EXISTS comments(
   creatorId VARCHAR(255) NOT NULL,
   eventId INT NOT NULL,
   body VARCHAR(2000),
-
   FOREIGN KEY (creatorId) REFERENCES accounts(id) ON DELETE CASCADE,
   FOREIGN KEY (eventId) REFERENCES events(id) ON DELETE CASCADE
 ) default charset utf8mb4 COMMENT '';
