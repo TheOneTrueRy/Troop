@@ -32,7 +32,7 @@ function CommentCard({ comment }) {
             <FaTrash className="d-flex" />
           </button>}
         </span>
-        <span className="">
+        <span className="comment-body-text">
           {comment.body}
         </span>
       </div>

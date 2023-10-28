@@ -200,7 +200,7 @@ function EventDetailsPage() {
             This event has been canceled.
           </span>}
           {attendees.map((a) => (
-            <img className="rounded-circle me-1" height={40} width={40} key={a?.id} src={a?.profile.picture} title={a?.profile.name} />
+            <img className="rounded-circle me-1 attendee-pic" height={40} width={40} key={a?.id} src={a?.profile.picture} title={a?.profile.name} />
           ))}
         </div>
       </div>
