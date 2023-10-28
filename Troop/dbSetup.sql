@@ -1,4 +1,4 @@
--- Active: 1694898014716@@SG-surf-noodle-9614-7850-mysql-master.servers.mongodirector.com@3306@Sandbox
+-- Active: 1698459077551@@SG-grand-orbit-5994-7930-mysql-master.servers.mongodirector.com@3306@Sandbox
 CREATE TABLE IF NOT EXISTS accounts(
   id VARCHAR(255) NOT NULL primary key COMMENT 'primary key',
   createdAt DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT 'Time Created',
@@ -41,5 +41,3 @@ CREATE TABLE IF NOT EXISTS comments(
   FOREIGN KEY (creatorId) REFERENCES accounts(id) ON DELETE CASCADE,
   FOREIGN KEY (eventId) REFERENCES events(id) ON DELETE CASCADE
 ) default charset utf8mb4 COMMENT '';
-
-ALTER TABLE events MODIFY COLUMN startDate VARCHAR(100) NOT NULL;
