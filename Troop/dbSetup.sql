@@ -1,4 +1,4 @@
--- Active: 1698459077551@@SG-grand-orbit-5994-7930-mysql-master.servers.mongodirector.com@3306@Sandbox
+-- Active: 1719377575877@@SG-humane-turtle-7150-9149-mysql-master.servers.mongodirector.com@3306@Sandbox
 CREATE TABLE IF NOT EXISTS accounts(
   id VARCHAR(255) NOT NULL primary key COMMENT 'primary key',
   createdAt DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT 'Time Created',
