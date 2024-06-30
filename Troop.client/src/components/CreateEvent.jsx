@@ -19,7 +19,7 @@ function CreateEvent() {
       // @ts-ignore
       document.getElementById('createFormEvent').reset();
       Pop.success('Event successfully created!');
-      navigate(`https://ry-troop.onrender.com/events/${eventId}`);
+      navigate(`https://ry-troop.onrender.com/#/events/${eventId}`);
     }
     catch (error) {
       Pop.error(error);
